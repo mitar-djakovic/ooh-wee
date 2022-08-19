@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 
 const SomeText = styled.div`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary.main};
+  font-family: ${(props) => props.theme.fonts.primary};
 `;
 
 const Home = () => {
