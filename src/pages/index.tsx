@@ -1,12 +1,11 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
-const SomeText = styled.div`
-  color: ${(props) => props.theme.colors.primary.main};
-  font-family: ${(props) => props.theme.fonts.primary};
+const Button = styled.button`
+  background-color: ${(props) => props.theme.colors.primary.main};
 `;
 
 const Home = () => {
-  return <SomeText>Hello world</SomeText>;
+  return <Button>Hello</Button>;
 };
 
 export default Home;
