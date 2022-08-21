@@ -1,5 +1,11 @@
+import styled from 'styled-components';
+
+const Button = styled.button`
+  background-color: ${(props) => props.theme.colors.primary.main};
+`;
+
 const Home = () => {
-  return <h1>Hello</h1>;
+  return <Button>Hello</Button>;
 };
 
 export default Home;
