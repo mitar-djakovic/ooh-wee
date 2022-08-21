@@ -1,11 +1,7 @@
-import styled from 'styled-components';
-
-const Button = styled.button`
-  background-color: ${(props) => props.theme.colors.primary.main};
-`;
+import { Button } from '../components';
 
 const Home = () => {
-  return <Button>Hello</Button>;
+  return <Button label={'Hello'} />;
 };
 
 export default Home;
