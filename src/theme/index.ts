@@ -39,7 +39,7 @@ export const theme = {
       dark: '#1C1C28',
       main: '#28293D',
       hover: '#555770',
-      light: '#8F90A6',
+      light: '#F4F6F9',
       focus: '#C7C9D9',
     },
   },
