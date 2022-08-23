@@ -21,8 +21,7 @@ const ButtonStyled = styled.button<Button>`
       return '10px 20px';
     }
   }};
-  border: 2px solid
-    ${(props) => props.outline && props.theme.colors.primary.main};
+  border: 2px solid ${(props) => props.theme.colors.primary.main};
   border-radius: 8px;
   box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.04),
     0px 2px 4px rgba(96, 97, 112, 0.16);
@@ -55,8 +54,7 @@ const ButtonStyled = styled.button<Button>`
     background-color: ${(props) =>
       !props.outline && props.theme.colors.primary.hover};
     color: ${(props) => props.outline && props.theme.colors.primary.hover};
-    border-color: ${(props) =>
-      props.outline && props.theme.colors.primary.hover};
+    border-color: ${(props) => props.theme.colors.primary.hover};
   }
   &:hover {
     cursor: pointer;
