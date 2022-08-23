@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    font-family: 'Inter', sans-serif;
   }
 
   /* HTML5 display-role reset for older browsers */
@@ -55,6 +56,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    font-family: 'Inter', sans-serif;
   }
   
   * {
