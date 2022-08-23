@@ -14,15 +14,15 @@ const ButtonStyled = styled.button<Button>`
   box-sizing: border-box;
   padding: ${(props) => {
     if (props.size === 'large') {
-      return '12px 24px';
+      return '8px 44px';
     } else if (props.size === 'small') {
-      return '8px 12px';
+      return '6px 24px';
     } else {
-      return '10px 20px';
+      return '6px 32px';
     }
   }};
   border: 2px solid ${(props) => props.theme.colors.primary.main};
-  border-radius: 8px;
+  border-radius: 48px;
   box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.04),
     0px 2px 4px rgba(96, 97, 112, 0.16);
   color: ${(props) =>
@@ -35,9 +35,9 @@ const ButtonStyled = styled.button<Button>`
     if (props.size === 'large') {
       return '18px';
     } else if (props.size === 'small') {
-      return '14px';
+      return '12px';
     } else {
-      return '16px';
+      return '14px';
     }
   }};
   line-height: ${(props) => {
