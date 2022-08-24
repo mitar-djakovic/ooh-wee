@@ -28,17 +28,22 @@ export const theme = {
       light: '#FF8080',
       focus: '#FFE5E5',
     },
+    weightColors: {
+      bold: '#09101D',
+      regular: '#6D7580',
+      light: '#09101D',
+    },
     random: {
       background: '#CFEBF7',
       black: '#131516',
       grayLight: '#F5F7FA',
       white: '#FFFFFF',
     },
-    fontWeight: {
-      regular: 400,
-      semiBold: 600,
-      bold: 700,
-    },
+  },
+  fontWeight: {
+    light: 200,
+    regular: 400,
+    bold: 700,
   },
   fonts: {
     primary: 'Inter, sans-serif',

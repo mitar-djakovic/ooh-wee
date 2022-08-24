@@ -28,9 +28,10 @@ const ButtonStyled = styled.button<Button>`
   color: ${(props) =>
     props.outline
       ? props.theme.colors.primary.main
-      : props.theme.colors.text.main};
+      : props.theme.colors.random.white};
   font-style: normal;
-  font-weight: 500;
+  font-family: ${(props) => props.theme.fonts.primary};
+  font-weight: ${(props) => props.theme.fontWeight.regular};
   font-size: ${(props) => {
     if (props.size === 'large') {
       return '18px';
