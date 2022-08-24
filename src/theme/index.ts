@@ -28,19 +28,16 @@ export const theme = {
       light: '#FF8080',
       focus: '#FFE5E5',
     },
-    text: {
-      dark: '#E4E4EB',
-      main: '#FFFFFF',
-      hover: '#EBEBF0',
-      light: '#F2F2F5',
-      focus: '#FAFAFC',
+    random: {
+      background: '#CFEBF7',
+      black: '#131516',
+      grayLight: '#F5F7FA',
+      white: '#FFFFFF',
     },
-    background: {
-      dark: '#1C1C28',
-      main: '#28293D',
-      hover: '#555770',
-      light: '#F4F6F9',
-      focus: '#C7C9D9',
+    fontWeight: {
+      regular: 400,
+      semiBold: 600,
+      bold: 700,
     },
   },
   fonts: {
