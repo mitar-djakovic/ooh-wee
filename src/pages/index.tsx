@@ -1,7 +1,48 @@
-import { Button } from '../components';
+import { useRouter } from 'next/router';
+
+import { Button, Container } from '../components';
+
+import {
+  ButtonsContainer,
+  Description,
+  ExploreContainer,
+  HomeView,
+  ImagesContainer,
+  SubTitle,
+  Title,
+} from './Home.styled';
 
 const Home = () => {
-  return <Button label={'Hello'} />;
+  const router = useRouter();
+  const toSignup = () => router.push('/signup');
+  const foo = () => null;
+  return (
+    <HomeView>
+      <Container display={'flex'}>
+        <ExploreContainer>
+          <div>
+            <SubTitle fontWeight={'bold'} variant={'h5'}>
+              Comics marketplace
+            </SubTitle>
+            <Title fontWeight={'bold'} variant={'h1'}>
+              Start your comic journey here
+            </Title>
+            <Description variant={'p'}>
+              Our marketplace is largest world largest marketplace <br /> for
+              comic collectors
+            </Description>
+          </div>
+          <ButtonsContainer>
+            <Button label={'Explore'} disabled onClick={foo} />
+            <Button label={'Create'} onClick={toSignup} />
+          </ButtonsContainer>
+        </ExploreContainer>
+        <ImagesContainer>
+          <div>2</div>
+        </ImagesContainer>
+      </Container>
+    </HomeView>
+  );
 };
 
 export default Home;

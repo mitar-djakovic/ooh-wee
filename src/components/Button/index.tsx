@@ -6,6 +6,7 @@ type Size = 'large' | 'medium' | 'small';
 
 interface ButtonProps {
   label: string;
+  onClick: any;
   outline?: boolean;
   size?: Size;
   disabled?: boolean;
@@ -13,12 +14,18 @@ interface ButtonProps {
 
 const Button: FC<ButtonProps> = ({
   label,
+  onClick,
   outline,
   size = 'medium',
   disabled = false,
 }: ButtonProps) => {
   return (
-    <ButtonStyled disabled={disabled} outline={outline} size={size}>
+    <ButtonStyled
+      onClick={onClick}
+      disabled={disabled}
+      outline={outline}
+      size={size}
+    >
       {label}
     </ButtonStyled>
   );
