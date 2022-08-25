@@ -6,7 +6,7 @@ type Size = 'large' | 'medium' | 'small';
 
 interface ButtonProps {
   label: string;
-  onClick: any;
+  onClick: () => void;
   outline?: boolean;
   size?: Size;
   disabled?: boolean;
