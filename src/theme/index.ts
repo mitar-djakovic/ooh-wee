@@ -66,53 +66,62 @@ export const theme = {
   fonts: {
     primary: 'Inter, sans-serif',
   }, // Design start bellow
-  headings: {
-    h1: {
-      fontSize: '42px',
-      lineHeight: '51px',
-      fontWeight: 800,
+  typography: {
+    headings: {
+      h1: {
+        fontSize: '42px',
+        lineHeight: '51px',
+        fontWeight: 800,
+      },
+      h2: {
+        fontSize: '34px',
+        lineHeight: '41px',
+        fontWeight: 800,
+      },
+      h3: {
+        fontSize: '28px',
+        lineHeight: '34px',
+        fontWeight: 800,
+      },
+      h4: {
+        fontSize: '24px',
+        lineHeight: '29px',
+        fontWeight: 800,
+      },
+      h5: {
+        fontSize: '20px',
+        lineHeight: '28px',
+        fontWeight: 800,
+      },
+      h6: {
+        fontSize: '18px',
+        lineHeight: '24px',
+        fontWeight: 800,
+      },
     },
-    h2: {
-      fontSize: '34px',
-      lineHeight: '41px',
-      fontWeight: 800,
+    paragraphs: {
+      big: {
+        fontSize: '16px',
+        lineHeight: '24px',
+        fontWeight: 400,
+      },
+      medium: {
+        fontSize: '14px',
+        lineHeight: '21px',
+        fontWeight: 400,
+      },
+      small: {
+        fontSize: '12px',
+        lineHeight: '18px',
+        fontWeight: 400,
+      },
     },
-    h3: {
-      fontSize: '28px',
-      lineHeight: '34px',
-      fontWeight: 800,
-    },
-    h4: {
-      fontSize: '24px',
-      lineHeight: '29px',
-      fontWeight: 800,
-    },
-    h5: {
-      fontSize: '20px',
-      lineHeight: '28px',
-      fontWeight: 800,
-    },
-    h6: {
-      fontSize: '18px',
-      lineHeight: '24px',
-      fontWeight: 800,
-    },
-  },
-  paragraphs: {
-    big: {
-      fontSize: '16px',
-      lineHeight: '24px',
-      fontWeight: 400,
-    },
-    medium: {
-      fontSize: '14px',
-      lineHeight: '21px',
-      fontWeight: 400,
-    },
-    small: {
-      fontSize: '12px',
-      lineHeight: '18px',
-      fontWeight: 400,
+    buttons: {
+      primary: {
+        fontSize: '14px',
+        lineHeight: '21px',
+        fontWeight: 700,
+      },
     },
   },
 };

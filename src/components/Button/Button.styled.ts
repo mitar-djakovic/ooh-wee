@@ -1,26 +1,18 @@
 import styled from 'styled-components';
 
-type Size = 'large' | 'medium' | 'small';
-
 type Button = {
   outline: boolean | undefined;
-  size: Size;
   disabled: boolean;
 };
 
 const ButtonStyled = styled.button<Button>`
+  font-weight: ${(props) => props.theme.typography.buttons.primary.fontWeight};
+  font-size: ${(props) => props.theme.typography.buttons.primary.fontSize};
+  line-height: ${(props) => props.theme.typography.buttons.primary.lineHeight};
   background-color: ${(props) =>
     props.outline ? '#FFF' : props.theme.colors.primary.main};
   box-sizing: border-box;
-  padding: ${(props) => {
-    if (props.size === 'large') {
-      return '8px 44px';
-    } else if (props.size === 'small') {
-      return '6px 24px';
-    } else {
-      return '6px 32px';
-    }
-  }};
+  padding: 12px 44px;
   border: 2px solid ${(props) => props.theme.colors.primary.main};
   border-radius: 48px;
   box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.04),
@@ -30,26 +22,6 @@ const ButtonStyled = styled.button<Button>`
       ? props.theme.colors.primary.main
       : props.theme.colors.random.white};
   font-style: normal;
-  font-family: ${(props) => props.theme.fonts.primary};
-  font-weight: ${(props) => props.theme.fontWeight.regular};
-  font-size: ${(props) => {
-    if (props.size === 'large') {
-      return '18px';
-    } else if (props.size === 'small') {
-      return '12px';
-    } else {
-      return '14px';
-    }
-  }};
-  line-height: ${(props) => {
-    if (props.size === 'large') {
-      return '28px';
-    } else if (props.size === 'small') {
-      return '20px';
-    } else {
-      return '24px';
-    }
-  }};
   letter-spacing: 0.2px;
   &:disabled {
     background-color: ${(props) =>

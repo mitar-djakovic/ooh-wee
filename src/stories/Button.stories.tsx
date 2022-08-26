@@ -8,9 +8,6 @@ export default {
   title: 'Component/Button',
   component: Button,
   argTypes: {
-    size: {
-      type: 'string',
-    },
     outline: {
       type: 'boolean',
     },
@@ -20,7 +17,7 @@ export default {
 const Template: ComponentStory<typeof Button> = (args) => {
   return (
     <ThemeProvider theme={theme}>
-      <Button {...args} />
+      <Button {...args}>Hello Button</Button>
     </ThemeProvider>
   );
 };
@@ -28,6 +25,5 @@ const Template: ComponentStory<typeof Button> = (args) => {
 export const Primary = Template.bind({});
 
 Primary.args = {
-  size: 'medium',
   outline: false,
 };
