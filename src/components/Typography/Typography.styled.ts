@@ -1,143 +1,45 @@
 import styled from 'styled-components';
 
-import { device } from '../../styles/breakpoints';
-
-type Props = {
-  fontWeight: string;
-};
-
-const Heading1 = styled.h1<Props>`
-  color: ${(props) => props.theme.colors.random.black};
-  font-family: ${(props) => props.theme.fonts.primary};
-  font-weight: ${(props) => props.theme.fontWeight[props.fontWeight]};
-
-  @media only screen and ${device.xs} {
-    font-size: 32px;
-    line-height: 36px;
-  }
-
-  @media only screen and ${device.md} {
-    font-size: 38px;
-    line-height: 44px;
-  }
-
-  @media only screen and ${device.xl} {
-    font-size: 48px;
-    line-height: 52px;
-  }
+const Heading1 = styled.h1`
+  font-size: ${(props) => props.theme.headings.h1.fontSize};
+  line-height: ${(props) => props.theme.headings.h1.lineHeight};
+  font-weight: ${(props) => props.theme.headings.h1.fontWeight};
 `;
 
-const Heading2 = styled.h2<Props>`
-  color: ${(props) => props.theme.colors.random.black};
-  font-family: ${(props) => props.theme.fonts.primary};
-  font-weight: ${(props) => props.theme.fontWeight[props.fontWeight]};
-
-  @media only screen and ${device.xs} {
-    font-size: 29px;
-    line-height: 32px;
-  }
-
-  @media only screen and ${device.md} {
-    font-size: 33px;
-    line-height: 36px;
-  }
-
-  @media only screen and ${device.xl} {
-    font-size: 40px;
-    line-height: 44px;
-  }
+const Heading2 = styled.h2`
+  font-size: ${(props) => props.theme.headings.h2.fontSize};
+  line-height: ${(props) => props.theme.headings.h2.lineHeight};
+  font-weight: ${(props) => props.theme.headings.h2.fontWeight};
 `;
 
-const Heading3 = styled.h3<Props>`
-  color: ${(props) => props.theme.colors.random.black};
-  font-family: ${(props) => props.theme.fonts.primary};
-  font-weight: ${(props) => props.theme.fontWeight[props.fontWeight]};
-
-  @media only screen and ${device.xs} {
-    font-size: 26px;
-    line-height: 32px;
-  }
-
-  @media only screen and ${device.md} {
-    font-size: 28px;
-    line-height: 32px;
-  }
-
-  @media only screen and ${device.xl} {
-    font-size: 33px;
-    line-height: 36px;
-  }
+const Heading3 = styled.h3`
+  font-size: ${(props) => props.theme.headings.h3.fontSize};
+  line-height: ${(props) => props.theme.headings.h3.lineHeight};
+  font-weight: ${(props) => props.theme.headings.h3.fontWeight};
 `;
 
-const Heading4 = styled.h4<Props>`
-  color: ${(props) => props.theme.colors.random.black};
-  font-family: ${(props) => props.theme.fonts.primary};
-  font-weight: ${(props) => props.theme.fontWeight[props.fontWeight]};
-
-  @media only screen and ${device.xs} {
-    font-size: 23px;
-    line-height: 24px;
-  }
-
-  @media only screen and ${device.md} {
-    font-size: 24px;
-    line-height: 28px;
-  }
-
-  @media only screen and ${device.xl} {
-    font-size: 28px;
-    line-height: 32px;
-  }
+const Heading4 = styled.h4`
+  font-size: ${(props) => props.theme.headings.h4.fontSize};
+  line-height: ${(props) => props.theme.headings.h4.lineHeight};
+  font-weight: ${(props) => props.theme.headings.h4.fontWeight};
 `;
 
-const Heading5 = styled.h5<Props>`
-  color: ${(props) => props.theme.colors.random.black};
-  font-family: ${(props) => props.theme.fonts.primary};
-  font-weight: ${(props) => props.theme.fontWeight[props.fontWeight]};
-
-  @media only screen and ${device.xs} {
-    font-size: 20px;
-    line-height: 24px;
-  }
-
-  @media only screen and ${device.md} {
-    font-size: 21px;
-    line-height: 24px;
-  }
-
-  @media only screen and ${device.xl} {
-    font-size: 23px;
-    line-height: 24px;
-  }
+const Heading5 = styled.h5`
+  font-size: ${(props) => props.theme.headings.h5.fontSize};
+  line-height: ${(props) => props.theme.headings.h5.lineHeight};
+  font-weight: ${(props) => props.theme.headings.h5.fontWeight};
 `;
 
-const Heading6 = styled.h6<Props>`
-  color: ${(props) => props.theme.colors.random.black};
-  font-family: ${(props) => props.theme.fonts.primary};
-  font-weight: ${(props) => props.theme.fontWeight[props.fontWeight]};
-  font-size: 18px;
-  line-height: 20px;
+const Heading6 = styled.h6`
+  font-size: ${(props) => props.theme.headings.h6.fontSize};
+  line-height: ${(props) => props.theme.headings.h6.lineHeight};
+  font-weight: ${(props) => props.theme.headings.h6.fontWeight};
 `;
 
-const Paragraph = styled.p<Props>`
-  color: ${(props) => props.theme.colors.random.black};
-  font-family: ${(props) => props.theme.fonts.primary};
-  font-weight: ${(props) => props.theme.fontWeight[props.fontWeight]};
-
-  @media only screen and ${device.xs} {
-    font-size: 20px;
-    line-height: 28px;
-  }
-
-  @media only screen and ${device.md} {
-    font-size: 21px;
-    line-height: 32px;
-  }
-
-  @media only screen and ${device.xl} {
-    font-size: 23px;
-    line-height: 36px;
-  }
+const Paragraph = styled.p`
+  font-size: ${(props) => props.theme.paragraphs.big.fontSize};
+  line-height: ${(props) => props.theme.paragraphs.big.lineHeight};
+  font-weight: ${(props) => props.theme.paragraphs.big.fontWeight};
 `;
 
 export {
