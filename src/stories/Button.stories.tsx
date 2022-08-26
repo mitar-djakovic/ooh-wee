@@ -8,9 +8,6 @@ export default {
   title: 'Component/Button',
   component: Button,
   argTypes: {
-    label: {
-      type: 'string',
-    },
     size: {
       type: 'string',
     },
@@ -31,7 +28,6 @@ const Template: ComponentStory<typeof Button> = (args) => {
 export const Primary = Template.bind({});
 
 Primary.args = {
-  label: 'Button',
   size: 'medium',
   outline: false,
 };

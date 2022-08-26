@@ -12,7 +12,7 @@ import {
   Title,
 } from './Home.styled';
 
-const Home = () => {
+const HomePage = () => {
   const router = useRouter();
   const toSignup = () => router.push('/signup');
   const foo = () => null;
@@ -33,8 +33,10 @@ const Home = () => {
             </Description>
           </div>
           <ButtonsContainer>
-            <Button label={'Explore'} disabled onClick={foo} />
-            <Button label={'Create'} onClick={toSignup} />
+            <Button disabled onClick={foo}>
+              Explore
+            </Button>
+            <Button onClick={toSignup}>Create</Button>
           </ButtonsContainer>
         </ExploreContainer>
         <ImagesContainer>
@@ -45,4 +47,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

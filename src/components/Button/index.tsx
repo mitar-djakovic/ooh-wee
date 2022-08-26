@@ -3,30 +3,34 @@ import { FC } from 'react';
 import { ButtonStyled } from './Button.styled';
 
 type Size = 'large' | 'medium' | 'small';
+type Type = 'submit' | 'reset' | 'button';
 
 interface ButtonProps {
-  label: string;
-  onClick: () => void;
+  children: string;
+  onClick?: () => void;
   outline?: boolean;
   size?: Size;
   disabled?: boolean;
+  type?: Type;
 }
 
 const Button: FC<ButtonProps> = ({
-  label,
+  children,
   onClick,
-  outline,
+  outline = false,
   size = 'medium',
   disabled = false,
+  type = 'button',
 }: ButtonProps) => {
   return (
     <ButtonStyled
+      type={type}
       onClick={onClick}
       disabled={disabled}
       outline={outline}
       size={size}
     >
-      {label}
+      {children}
     </ButtonStyled>
   );
 };
