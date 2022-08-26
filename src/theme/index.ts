@@ -1,5 +1,23 @@
 export const theme = {
   colors: {
+    status: {
+      error: {
+        primary: '#DA1414',
+        secondary: '#FEEFEF',
+      },
+      warning: {
+        primary: '#B95000',
+        secondary: '#FFF4EC',
+      },
+      success: {
+        primary: '#287D3C',
+        secondary: '#EDF9F0',
+      },
+      info: {
+        primary: '#2E5AAC',
+        secondary: '#EEF2FA',
+      },
+    },
     primary: {
       dark: '#004FC4',
       main: '#0063F7',
