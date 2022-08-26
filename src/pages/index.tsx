@@ -21,12 +21,8 @@ const HomePage = () => {
       <Container display={'flex'}>
         <ExploreContainer>
           <div>
-            <SubTitle fontWeight={'bold'} variant={'h5'}>
-              Comics marketplace
-            </SubTitle>
-            <Title fontWeight={'bold'} variant={'h1'}>
-              Start your comic journey here
-            </Title>
+            <SubTitle variant={'h5'}>Comics marketplace</SubTitle>
+            <Title variant={'h1'}>Start your comic journey here</Title>
             <Description variant={'p'}>
               Our marketplace is largest world largest marketplace <br /> for
               comic collectors
