@@ -18,11 +18,11 @@ interface InputProps {
   value: string;
   showStatus: boolean;
   icon: JSX.Element;
+  fullWidth?: boolean;
 }
 
 const Input: FC<InputProps> = ({
   placeholder,
-  outline = false,
   label,
   name,
   onBlur,
@@ -31,16 +31,16 @@ const Input: FC<InputProps> = ({
   value,
   showStatus,
   icon,
+  fullWidth,
 }: InputProps) => {
   return (
-    <InputContainer>
+    <InputContainer fullWidth={fullWidth}>
       {label && <Label htmlFor={name}>{label}</Label>}
       <InputStyled
         id={id}
         onChange={onChange}
         onBlur={onBlur}
         name={name}
-        outline={outline}
         placeholder={placeholder}
         value={value}
       />
