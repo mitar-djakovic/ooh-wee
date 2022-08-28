@@ -1,18 +1,33 @@
 import { Field, Form, Formik } from 'formik';
+import Image from 'next/image';
 
+import { logoImg } from '../../../assets/images';
 import { Button, Icon, Input } from '../../../components';
 
 import {
   ButtonContainer,
-  SignupFormView,
+  Divider,
+  DividerContainer,
+  DividerText,
+  LogoContainer,
+  SignInFormView,
   SocialButton,
   SocialButtons,
-} from './SignupForm.styled';
+  SubTitle,
+  Title,
+} from './SignInForm.styled';
 import { validationSchema } from './validation';
 
 const SignupForm = () => {
   return (
-    <SignupFormView>
+    <SignInFormView>
+      <LogoContainer>
+        <Image src={logoImg} alt="Logo" />
+      </LogoContainer>
+      <Title variant="h1">Sign In</Title>
+      <SubTitle variant="p">
+        Take the next step and sign in to your account
+      </SubTitle>
       <Formik
         onSubmit={(values) => console.log('submit', values)}
         initialValues={{ email: '', password: '' }}
@@ -64,6 +79,11 @@ const SignupForm = () => {
                   Signup
                 </Button>
               </ButtonContainer>
+              <DividerContainer>
+                <Divider />
+                <DividerText variant="p">or</DividerText>
+                <Divider />
+              </DividerContainer>
               <SocialButtons>
                 <SocialButton fullWidth>Sign Up with Google</SocialButton>
                 <SocialButton fullWidth>Sign up with Facebook</SocialButton>
@@ -73,7 +93,7 @@ const SignupForm = () => {
           );
         }}
       </Formik>
-    </SignupFormView>
+    </SignInFormView>
   );
 };
 

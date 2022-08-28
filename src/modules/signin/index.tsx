@@ -1,12 +1,12 @@
-import { SignupView } from './Signup.styled';
-import SignupForm from './SignupForm';
+import { SignInView } from './SignIn.styled';
+import SignupForm from './SignInForm';
 import WelcomeSection from './WelcomeSection';
 
 const Signup = () => (
-  <SignupView>
+  <SignInView>
     <WelcomeSection />
     <SignupForm />
-  </SignupView>
+  </SignInView>
 );
 
 export default Signup;

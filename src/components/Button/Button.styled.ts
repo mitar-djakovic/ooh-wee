@@ -16,8 +16,8 @@ const ButtonStyled = styled.button<Button>`
   padding: 12px 44px;
   border: 2px solid ${(props) => props.theme.colors.primary.main};
   border-radius: 48px;
-  box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.04),
-    0px 2px 4px rgba(96, 97, 112, 0.16);
+  //box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.04),
+  //  0px 2px 4px rgba(96, 97, 112, 0.16);
   color: ${(props) =>
     props.outline
       ? props.theme.colors.primary.main
