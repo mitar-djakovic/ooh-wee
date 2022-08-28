@@ -31,10 +31,11 @@ const Input: FC<InputProps> = ({
   id,
   value,
   // showStatus,
-  // icon,
+  icon,
   fullWidth,
   type = 'text',
 }: InputProps) => {
+  console.log('icon', icon);
   return (
     <InputContainer fullWidth={fullWidth}>
       {label && <Label htmlFor={name}>{label}</Label>}
@@ -47,6 +48,7 @@ const Input: FC<InputProps> = ({
         placeholder={placeholder}
         value={value}
       />
+      {icon}
       {/*{showStatus && <InputMessage status={'error'}>{icon} Hello</InputMessage>}*/}
     </InputContainer>
   );
