@@ -15,7 +15,7 @@ import {
 
 const WelcomeSection = () => {
   const router = useRouter();
-  const onClick = () => router.push('/signup');
+  const onClick = () => router.push('/signin');
 
   return (
     <WelcomeSectionView>
@@ -27,8 +27,8 @@ const WelcomeSection = () => {
           A highly-curated platform for creating, collecting Comics
         </Title>
         <MessageContainer>
-          <SubTitle variant="p">You don’t have an account?</SubTitle>
-          <Button onClick={onClick}>Sign Up</Button>
+          <SubTitle variant="p">You already have an account?</SubTitle>
+          <Button onClick={onClick}>Sign In</Button>
         </MessageContainer>
       </ContentContainer>
     </WelcomeSectionView>

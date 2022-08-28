@@ -1,11 +1,11 @@
 import { SignInView } from './SignIn.styled';
-import SignupForm from './SignInForm';
+import SignInForm from './SignInForm';
 import WelcomeSection from './WelcomeSection';
 
 const Signup = () => (
   <SignInView>
     <WelcomeSection />
-    <SignupForm />
+    <SignInForm />
   </SignInView>
 );
 
