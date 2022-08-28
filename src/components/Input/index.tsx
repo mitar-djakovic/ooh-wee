@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import {
   InputContainer,
-  InputMessage,
+  // InputMessage,
   InputStyled,
   Label,
 } from './Input.styled';
@@ -29,8 +29,8 @@ const Input: FC<InputProps> = ({
   onChange,
   id,
   value,
-  showStatus,
-  icon,
+  // showStatus,
+  // icon,
   fullWidth,
 }: InputProps) => {
   return (
@@ -44,7 +44,7 @@ const Input: FC<InputProps> = ({
         placeholder={placeholder}
         value={value}
       />
-      {showStatus && <InputMessage status={'error'}>{icon} Hello</InputMessage>}
+      {/*{showStatus && <InputMessage status={'error'}>{icon} Hello</InputMessage>}*/}
     </InputContainer>
   );
 };

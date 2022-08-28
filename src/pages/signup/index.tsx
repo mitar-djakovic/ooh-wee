@@ -1,5 +1,3 @@
-import Signup from '../../modules/signup';
-
-const SignupPage = () => <Signup />;
+const SignupPage = () => <div>Signup</div>;
 
 export default SignupPage;

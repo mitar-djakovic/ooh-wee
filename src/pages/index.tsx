@@ -14,7 +14,7 @@ import {
 
 const HomePage = () => {
   const router = useRouter();
-  const toSignup = () => router.push('/signup');
+  const toSignup = () => router.push('/signin');
   const foo = () => null;
   return (
     <HomeView>

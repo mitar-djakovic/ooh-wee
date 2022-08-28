@@ -7,6 +7,7 @@ const InputStyled = styled.input`
   padding: 12px 20px;
   border-radius: 24px;
   border: 1px solid rgba(207, 219, 213, 0.6);
+  margin-top: 4px;
   ::placeholder {
     font-size: ${(props) => props.theme.typography.inputs.primary.fontSize};
     font-weight: ${(props) => props.theme.typography.inputs.primary.fontWeight};
@@ -19,7 +20,7 @@ const InputStyled = styled.input`
 const InputContainer = styled.div<{ fullWidth: boolean | undefined }>`
   width: ${(props) => (props.fullWidth ? '100%' : '360px')};
   position: relative;
-  padding: 18px 0;
+  margin-bottom: 16px;
 `;
 
 const Label = styled.label`
@@ -27,9 +28,7 @@ const Label = styled.label`
   line-height: 18px;
   font-weight: 500;
   color: ${(props) => props.theme.colors.random.dark};
-  margin-bottom: 8px;
-  position: absolute;
-  top: -4px;
+  position: relative;
 `;
 
 type Status = 'success' | 'info' | 'warning' | 'error';
