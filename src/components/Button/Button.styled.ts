@@ -3,6 +3,7 @@ import styled from 'styled-components';
 type Button = {
   outline: boolean | undefined;
   disabled: boolean;
+  fullWidth: boolean;
 };
 
 const ButtonStyled = styled.button<Button>`
@@ -23,6 +24,7 @@ const ButtonStyled = styled.button<Button>`
       : props.theme.colors.random.white};
   font-style: normal;
   letter-spacing: 0.2px;
+  width: ${(props) => props.fullWidth && '100%'};
   &:disabled {
     background-color: ${(props) =>
       !props.outline && props.theme.colors.primary.hover};
