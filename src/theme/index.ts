@@ -123,5 +123,12 @@ export const theme = {
         fontWeight: 700,
       },
     },
+    inputs: {
+      primary: {
+        fontSize: '14px',
+        lineHeight: '21px',
+        fontWeight: 700,
+      },
+    },
   },
 };

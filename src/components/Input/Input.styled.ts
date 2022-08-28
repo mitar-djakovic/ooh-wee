@@ -1,45 +1,35 @@
 import styled from 'styled-components';
 
-type Input = {
-  outline: boolean;
-};
-
-const InputStyled = styled.input<Input>`
-  width: 320px;
-  background-color: ${(props) =>
-    !props.outline && props.theme.colors.random.grayLight};
+const InputStyled = styled.input`
+  width: 100%;
+  background-color: #ffffff;
   box-sizing: border-box;
-  padding: 12px 16px;
-  border-radius: 8px;
-  border: 1px solid
-    ${(props) =>
-      props.outline
-        ? props.theme.colors.random.black
-        : props.theme.colors.random.light};
+  padding: 12px 20px;
+  border-radius: 24px;
+  border: 1px solid rgba(207, 219, 213, 0.6);
   ::placeholder {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: ${(props) => props.theme.typography.inputs.primary.fontSize};
+    font-weight: ${(props) => props.theme.typography.inputs.primary.fontWeight};
+    line-height: ${(props) => props.theme.typography.inputs.primary.lineHeight};
     opacity: 0.8;
     color: ${(props) => props.theme.colors.random.black};
-    font-weight: 600;
   }
 `;
 
-const InputContainer = styled.div`
-  width: 320px;
+const InputContainer = styled.div<{ fullWidth: boolean | undefined }>`
+  width: ${(props) => (props.fullWidth ? '100%' : '360px')};
   position: relative;
   padding: 18px 0;
 `;
 
 const Label = styled.label`
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 600;
-  opacity: 0.8;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
   color: ${(props) => props.theme.colors.random.dark};
-  margin-left: 16px;
+  margin-bottom: 8px;
   position: absolute;
-  top: 0;
+  top: -4px;
 `;
 
 type Status = 'success' | 'info' | 'warning' | 'error';
@@ -53,7 +43,6 @@ const InputMessage = styled.div<{ status?: Status }>`
   padding: 6px 8px 6px 16px;
   gap: 4px;
   background-color: ${(props) => {
-    console.log('props', props.status);
     if (props.status === 'error') {
       return props.theme.colors.status.error.secondary;
     }
