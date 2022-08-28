@@ -1,16 +1,12 @@
-import SignupForm from './signupForm';
+import { SignupView } from './Signup.styled';
+import SignupForm from './SignupForm';
+import WelcomeSection from './WelcomeSection';
 
 const Signup = () => (
-  <div
-    style={{
-      height: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-    }}
-  >
+  <SignupView>
+    <WelcomeSection />
     <SignupForm />
-  </div>
+  </SignupView>
 );
 
 export default Signup;
