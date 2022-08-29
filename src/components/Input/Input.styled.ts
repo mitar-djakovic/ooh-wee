@@ -52,4 +52,10 @@ const InputMessage = styled.div<{ status?: Status }>`
   line-height: 20px;
 `;
 
-export { InputContainer, InputMessage, InputStyled, Label };
+const IconWrapper = styled.div`
+  position: absolute;
+  top: 34px;
+  right: 15px;
+`;
+
+export { IconWrapper, InputContainer, InputMessage, InputStyled, Label };

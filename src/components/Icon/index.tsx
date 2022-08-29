@@ -2,6 +2,11 @@ import { FC } from 'react';
 
 import {
   CheckCircle,
+  Envelope,
+  Eye,
+  EyeClosed,
+  Lock,
+  User,
   WarningCircle,
   WarningCircleFull,
 } from '../../assets/icons';
@@ -16,10 +21,28 @@ const renderIcon = (name: string) => {
       return <WarningCircle />;
     case 'warning-full':
       return <WarningCircleFull />;
+    case 'eye':
+      return <Eye />;
+    case 'eye-closed':
+      return <EyeClosed />;
+    case 'envelope':
+      return <Envelope />;
+    case 'lock':
+      return <Lock />;
+    case 'user':
+      return <User />;
   }
 };
 
-type Name = 'warning' | 'warning-full' | 'check';
+type Name =
+  | 'warning'
+  | 'warning-full'
+  | 'check'
+  | 'eye'
+  | 'eye-closed'
+  | 'envelope'
+  | 'lock'
+  | 'user';
 
 interface IconProps {
   name: Name;
