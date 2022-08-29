@@ -56,7 +56,7 @@ const SignupForm = () => {
                 name="firstName"
                 id="firstName"
                 showStatus
-                icon={<Icon color="#DA1414" name="warning-full" />}
+                icon={<Icon name="user" />}
                 fullWidth
                 placeholder="Enter your first name"
                 label="First Name"
@@ -72,6 +72,7 @@ const SignupForm = () => {
                 showStatus
                 fullWidth
                 placeholder="Enter your last name"
+                icon={<Icon name="envelope" />}
                 label="Last Name"
                 value={values.lastName}
               />
@@ -82,7 +83,7 @@ const SignupForm = () => {
                 name="username"
                 id="username"
                 showStatus
-                icon={<Icon color="#DA1414" name="warning-full" />}
+                icon={<Icon name="warning" />}
                 fullWidth
                 placeholder="Enter your username"
                 label="Username"
@@ -99,6 +100,7 @@ const SignupForm = () => {
                 fullWidth
                 placeholder="Enter your email"
                 label="Email"
+                icon={<Icon name="envelope" />}
                 value={values.email}
               />
               <Field
@@ -109,7 +111,7 @@ const SignupForm = () => {
                 name="password"
                 id="password"
                 showStatus
-                icon={<Icon color="#DA1414" name="warning-full" />}
+                icon={<Icon name="eye-closed" />}
                 fullWidth
                 placeholder="Enter your password"
                 label="Password"
@@ -127,6 +129,7 @@ const SignupForm = () => {
                 placeholder="Confirm your password"
                 label="Confirm Password"
                 value={values.confirmPassword}
+                icon={<Icon name="lock" />}
               />
               <ButtonContainer>
                 <Button fullWidth type="submit" disabled={isSubmitting}>

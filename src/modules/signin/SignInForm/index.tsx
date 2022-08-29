@@ -55,7 +55,7 @@ const SignupForm = () => {
                 name="email"
                 id="email"
                 showStatus
-                icon={<Icon color="#DA1414" name="warning-full" />}
+                icon={<Icon name="envelope" />}
                 fullWidth
                 placeholder="Enter your email"
                 label="Email"
@@ -73,6 +73,7 @@ const SignupForm = () => {
                 placeholder="Enter your password"
                 label="Password"
                 value={values.password}
+                icon={<Icon name="lock" />}
               />
               <ButtonContainer>
                 <Button fullWidth type="submit" disabled={isSubmitting}>

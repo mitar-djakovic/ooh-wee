@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
 import {
+  IconWrapper,
   InputContainer,
   // InputMessage,
   InputStyled,
@@ -48,7 +49,7 @@ const Input: FC<InputProps> = ({
         placeholder={placeholder}
         value={value}
       />
-      {icon}
+      <IconWrapper>{icon}</IconWrapper>
       {/*{showStatus && <InputMessage status={'error'}>{icon} Hello</InputMessage>}*/}
     </InputContainer>
   );

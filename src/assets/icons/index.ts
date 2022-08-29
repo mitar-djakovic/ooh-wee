@@ -2,7 +2,7 @@ import CheckCircle from './CheckCircle';
 import Envelope from './Envelope';
 import Eye from './Eye';
 import EyeClosed from './EyeClosed';
-import Key from './Key';
+import Lock from './Lock';
 import User from './User';
 import WarningCircle from './WarningCircle';
 import WarningCircleFull from './WarningCircleFull';
@@ -12,7 +12,7 @@ export {
   Envelope,
   Eye,
   EyeClosed,
-  Key,
+  Lock,
   User,
   WarningCircle,
   WarningCircleFull,
