@@ -1,4 +1,4 @@
-import SignIn from '../../modules/signin';
+import SignIn from 'src/modules/signin';
 
 const LoginPage = () => <SignIn />;
 

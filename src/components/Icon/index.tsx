@@ -1,5 +1,4 @@
 import { FC } from 'react';
-
 import {
   CheckCircle,
   Envelope,
@@ -12,7 +11,7 @@ import {
   User,
   WarningCircle,
   WarningCircleFull,
-} from '../../assets/icons';
+} from 'src/assets/icons';
 
 import { IconView } from './Icon.styles';
 

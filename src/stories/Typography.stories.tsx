@@ -1,8 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Typography } from 'src/components';
+import { theme } from 'src/theme';
 import { ThemeProvider } from 'styled-components';
-
-import { Typography } from '../components';
-import { theme } from '../theme';
 
 export default {
   title: 'Component/Typography',

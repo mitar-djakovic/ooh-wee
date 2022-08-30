@@ -1,8 +1,7 @@
 import { Field, Form, Formik } from 'formik';
 import Image from 'next/image';
-
-import { logoImg } from '../../../assets/images';
-import { Button, Icon, Input } from '../../../components';
+import { logoImg } from 'src/assets/images';
+import { Button, Icon, Input } from 'src/components';
 
 import {
   ButtonContainer,

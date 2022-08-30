@@ -1,7 +1,6 @@
+import { Typography } from 'src/components';
+import { device } from 'src/styles/breakpoints';
 import styled from 'styled-components';
-
-import { Typography } from '../components';
-import { device } from '../styles/breakpoints';
 
 const ButtonsContainer = styled.div`
   margin: 40px 0;

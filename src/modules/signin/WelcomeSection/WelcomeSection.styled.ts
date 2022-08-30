@@ -1,6 +1,5 @@
+import { Typography } from 'src/components';
 import styled from 'styled-components';
-
-import { Typography } from '../../../components';
 
 const WelcomeSectionView = styled.div`
   width: 100%;

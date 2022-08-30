@@ -1,6 +1,5 @@
+import { Button, Typography } from 'src/components';
 import styled from 'styled-components';
-
-import { Button, Typography } from '../../../components';
 
 const SignInFormView = styled.div`
   width: 100%;

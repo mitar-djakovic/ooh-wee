@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
-
-import { Button, Container } from '../components';
+import { Button, Container } from 'src/components';
 
 import {
   ButtonsContainer,
