@@ -7,9 +7,9 @@ type Button = {
 };
 
 const ButtonStyled = styled.button<Button>`
-  font-weight: ${(props) => props.theme.typography.buttons.primary.fontWeight};
-  font-size: ${(props) => props.theme.typography.buttons.primary.fontSize};
-  line-height: ${(props) => props.theme.typography.buttons.primary.lineHeight};
+  font-weight: ${(props) => props.theme.typography.paragraphs.p1.fontWeight};
+  font-size: ${(props) => props.theme.typography.paragraphs.p1.fontSize};
+  line-height: ${(props) => props.theme.typography.paragraphs.p1.lineHeight};
   background-color: ${(props) =>
     props.outline ? '#FFF' : props.theme.colors.primary.main};
   box-sizing: border-box;

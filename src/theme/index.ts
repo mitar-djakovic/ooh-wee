@@ -58,11 +58,6 @@ export const theme = {
       white: '#FFFFFF',
     },
   },
-  fontWeight: {
-    light: 200,
-    regular: 400,
-    bold: 700,
-  },
   fonts: {
     primary: 'Inter, sans-serif',
   }, // Design start bellow
@@ -100,34 +95,20 @@ export const theme = {
       },
     },
     paragraphs: {
-      big: {
+      p1: {
         fontSize: '16px',
         lineHeight: '24px',
-        fontWeight: 400,
+        fontWeight: 500,
       },
-      medium: {
+      p2: {
         fontSize: '14px',
         lineHeight: '21px',
-        fontWeight: 400,
+        fontWeight: 500,
       },
-      small: {
+      p3: {
         fontSize: '12px',
         lineHeight: '18px',
-        fontWeight: 400,
-      },
-    },
-    buttons: {
-      primary: {
-        fontSize: '14px',
-        lineHeight: '21px',
-        fontWeight: 700,
-      },
-    },
-    inputs: {
-      primary: {
-        fontSize: '14px',
-        lineHeight: '21px',
-        fontWeight: 700,
+        fontWeight: 500,
       },
     },
   },

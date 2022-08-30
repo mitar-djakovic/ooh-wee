@@ -36,10 +36,22 @@ const Heading6 = styled.h6`
   font-weight: ${(props) => props.theme.typography.headings.h6.fontWeight};
 `;
 
-const Paragraph = styled.p`
-  font-size: ${(props) => props.theme.typography.paragraphs.big.fontSize};
-  line-height: ${(props) => props.theme.typography.paragraphs.big.lineHeight};
-  font-weight: ${(props) => props.theme.typography.paragraphs.big.fontWeight};
+const Paragraph1 = styled.p`
+  font-size: ${(props) => props.theme.typography.paragraphs.p1.fontSize};
+  line-height: ${(props) => props.theme.typography.paragraphs.p1.lineHeight};
+  font-weight: ${(props) => props.theme.typography.paragraphs.p1.fontWeight};
+`;
+
+const Paragraph2 = styled.p`
+  font-size: ${(props) => props.theme.typography.paragraphs.p2.fontSize};
+  line-height: ${(props) => props.theme.typography.paragraphs.p2.lineHeight};
+  font-weight: ${(props) => props.theme.typography.paragraphs.p2.fontWeight};
+`;
+
+const Paragraph3 = styled.p`
+  font-size: ${(props) => props.theme.typography.paragraphs.p3.fontSize};
+  line-height: ${(props) => props.theme.typography.paragraphs.p3.lineHeight};
+  font-weight: ${(props) => props.theme.typography.paragraphs.p3.fontWeight};
 `;
 
 export {
@@ -49,5 +61,7 @@ export {
   Heading4,
   Heading5,
   Heading6,
-  Paragraph,
+  Paragraph1,
+  Paragraph2,
+  Paragraph3,
 };

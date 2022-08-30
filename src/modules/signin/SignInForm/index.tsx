@@ -24,7 +24,7 @@ const SignupForm = () => {
         <Image src={logoImg} alt="Logo" />
       </LogoContainer>
       <Title variant="h1">Sign In</Title>
-      <SubTitle variant="p">
+      <SubTitle variant="p1">
         Take the next step and sign in to your account
       </SubTitle>
       <Formik
@@ -32,18 +32,7 @@ const SignupForm = () => {
         initialValues={{ email: '', password: '' }}
         validationSchema={validationSchema}
       >
-        {({
-          values,
-          isSubmitting,
-          errors,
-          touched,
-          handleBlur,
-          handleChange,
-        }) => {
-          console.log('errors', errors);
-          console.log('touched', touched);
-          console.log('values', values);
-          // console.log('-------', errors.email && touched.email)
+        {({ values, isSubmitting, handleBlur, handleChange }) => {
           return (
             <Form>
               <Field
@@ -81,7 +70,7 @@ const SignupForm = () => {
               </ButtonContainer>
               <DividerContainer>
                 <Divider />
-                <DividerText variant="p">or</DividerText>
+                <DividerText variant="p1">or</DividerText>
                 <Divider />
               </DividerContainer>
               <SocialButtons>
