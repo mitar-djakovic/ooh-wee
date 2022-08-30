@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-
-import { registrationBg } from '../../../assets/images';
-import { Button } from '../../../components';
+import { registrationBg } from 'src/assets/images';
+import { Button } from 'src/components';
 
 import {
   BackgroundImage,
