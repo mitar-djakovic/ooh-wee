@@ -25,7 +25,6 @@ const Button: FC<ButtonProps> = ({
   className,
   icon,
 }: ButtonProps) => {
-  console.log('icon', icon);
   return (
     <ButtonStyled
       className={className}

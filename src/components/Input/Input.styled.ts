@@ -9,9 +9,9 @@ const InputStyled = styled.input`
   border: 1px solid rgba(207, 219, 213, 0.6);
   margin-top: 4px;
   ::placeholder {
-    font-size: ${(props) => props.theme.typography.inputs.primary.fontSize};
-    font-weight: ${(props) => props.theme.typography.inputs.primary.fontWeight};
-    line-height: ${(props) => props.theme.typography.inputs.primary.lineHeight};
+    font-size: ${(props) => props.theme.typography.paragraphs.p1.fontSize};
+    font-weight: ${(props) => props.theme.typography.paragraphs.p1.fontWeight};
+    line-height: ${(props) => props.theme.typography.paragraphs.p1.lineHeight};
     opacity: 0.8;
     color: ${(props) => props.theme.colors.random.black};
   }

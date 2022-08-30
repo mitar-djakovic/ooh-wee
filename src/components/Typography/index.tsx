@@ -7,10 +7,12 @@ import {
   Heading4,
   Heading5,
   Heading6,
-  Paragraph,
+  Paragraph1,
+  Paragraph2,
+  Paragraph3,
 } from './Typography.styled';
 
-type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p1' | 'p2' | 'p3';
 
 interface TypographyProp {
   variant: Variant;
@@ -32,8 +34,12 @@ const Typography = ({ variant, children, className }: TypographyProp) => {
       return <Heading5 className={className}>{children}</Heading5>;
     case 'h6':
       return <Heading6 className={className}>{children}</Heading6>;
+    case 'p1':
+      return <Paragraph1 className={className}>{children}</Paragraph1>;
+    case 'p2':
+      return <Paragraph2 className={className}>{children}</Paragraph2>;
     default:
-      return <Paragraph className={className}>{children}</Paragraph>;
+      return <Paragraph3 className={className}>{children}</Paragraph3>;
   }
 };
 

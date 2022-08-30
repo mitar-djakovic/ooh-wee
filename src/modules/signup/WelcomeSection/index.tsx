@@ -27,7 +27,7 @@ const WelcomeSection = () => {
           A highly-curated platform for creating, collecting Comics
         </Title>
         <MessageContainer>
-          <SubTitle variant="p">You already have an account?</SubTitle>
+          <SubTitle variant="p1">You already have an account?</SubTitle>
           <Button onClick={onClick}>Sign In</Button>
         </MessageContainer>
       </ContentContainer>

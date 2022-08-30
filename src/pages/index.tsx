@@ -22,7 +22,7 @@ const HomePage = () => {
           <div>
             <SubTitle variant={'h5'}>Comics marketplace</SubTitle>
             <Title variant={'h1'}>Start your comic journey here</Title>
-            <Description variant={'p'}>
+            <Description variant="p1">
               Our marketplace is largest world largest marketplace <br /> for
               comic collectors
             </Description>
