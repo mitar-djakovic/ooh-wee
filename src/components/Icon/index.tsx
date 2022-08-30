@@ -5,7 +5,10 @@ import {
   Envelope,
   Eye,
   EyeClosed,
+  Facebook,
+  Google,
   Lock,
+  Twitter,
   User,
   WarningCircle,
   WarningCircleFull,
@@ -31,6 +34,12 @@ const renderIcon = (name: string) => {
       return <Lock />;
     case 'user':
       return <User />;
+    case 'google':
+      return <Google />;
+    case 'twitter':
+      return <Twitter />;
+    case 'facebook':
+      return <Facebook />;
   }
 };
 
@@ -42,7 +51,10 @@ type Name =
   | 'eye-closed'
   | 'envelope'
   | 'lock'
-  | 'user';
+  | 'user'
+  | 'google'
+  | 'twitter'
+  | 'facebook';
 
 interface IconProps {
   name: Name;

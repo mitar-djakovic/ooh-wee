@@ -25,6 +25,9 @@ const ButtonStyled = styled.button<Button>`
   font-style: normal;
   letter-spacing: 0.2px;
   width: ${(props) => props.fullWidth && '100%'};
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &:disabled {
     background-color: ${(props) =>
       !props.outline && props.theme.colors.primary.hover};
@@ -36,4 +39,8 @@ const ButtonStyled = styled.button<Button>`
   }
 `;
 
-export { ButtonStyled };
+const IconWrapper = styled.div`
+  margin-right: 10px;
+`;
+
+export { ButtonStyled, IconWrapper };

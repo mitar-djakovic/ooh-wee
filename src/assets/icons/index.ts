@@ -2,7 +2,10 @@ import CheckCircle from './CheckCircle';
 import Envelope from './Envelope';
 import Eye from './Eye';
 import EyeClosed from './EyeClosed';
+import Facebook from './Facebook';
+import Google from './Google';
 import Lock from './Lock';
+import Twitter from './Twitter';
 import User from './User';
 import WarningCircle from './WarningCircle';
 import WarningCircleFull from './WarningCircleFull';
@@ -12,7 +15,10 @@ export {
   Envelope,
   Eye,
   EyeClosed,
+  Facebook,
+  Google,
   Lock,
+  Twitter,
   User,
   WarningCircle,
   WarningCircleFull,

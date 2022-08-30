@@ -35,24 +35,21 @@ const Input: FC<InputProps> = ({
   icon,
   fullWidth,
   type = 'text',
-}: InputProps) => {
-  console.log('icon', icon);
-  return (
-    <InputContainer fullWidth={fullWidth}>
-      {label && <Label htmlFor={name}>{label}</Label>}
-      <InputStyled
-        type={type}
-        id={id}
-        onChange={onChange}
-        onBlur={onBlur}
-        name={name}
-        placeholder={placeholder}
-        value={value}
-      />
-      <IconWrapper>{icon}</IconWrapper>
-      {/*{showStatus && <InputMessage status={'error'}>{icon} Hello</InputMessage>}*/}
-    </InputContainer>
-  );
-};
+}: InputProps) => (
+  <InputContainer fullWidth={fullWidth}>
+    {label && <Label htmlFor={name}>{label}</Label>}
+    <InputStyled
+      type={type}
+      id={id}
+      onChange={onChange}
+      onBlur={onBlur}
+      name={name}
+      placeholder={placeholder}
+      value={value}
+    />
+    <IconWrapper>{icon}</IconWrapper>
+    {/*{showStatus && <InputMessage status={'error'}>{icon} Hello</InputMessage>}*/}
+  </InputContainer>
+);
 
 export default Input;
