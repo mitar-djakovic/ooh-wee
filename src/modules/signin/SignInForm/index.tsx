@@ -86,9 +86,15 @@ const SignupForm = () => {
                 <Divider />
               </DividerContainer>
               <SocialButtons>
-                <SocialButton fullWidth>Sign Up with Google</SocialButton>
-                <SocialButton fullWidth>Sign up with Facebook</SocialButton>
-                <SocialButton fullWidth>Sign up with Twitter</SocialButton>
+                <SocialButton icon={<Icon name="google" />} fullWidth>
+                  Sign Up with Google
+                </SocialButton>
+                <SocialButton icon={<Icon name="facebook" />} fullWidth>
+                  Sign up with Facebook
+                </SocialButton>
+                <SocialButton icon={<Icon name="twitter" />} fullWidth>
+                  Sign up with Twitter
+                </SocialButton>
               </SocialButtons>
             </Form>
           );

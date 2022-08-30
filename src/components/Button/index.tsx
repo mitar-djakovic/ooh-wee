@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { ButtonStyled } from './Button.styled';
+import { ButtonStyled, IconWrapper } from './Button.styled';
 
 type Type = 'submit' | 'reset' | 'button';
 
@@ -12,6 +12,7 @@ interface ButtonProps {
   type?: Type;
   fullWidth?: boolean;
   className?: string;
+  icon?: JSX.Element;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -22,7 +23,9 @@ const Button: FC<ButtonProps> = ({
   type = 'button',
   fullWidth = false,
   className,
+  icon,
 }: ButtonProps) => {
+  console.log('icon', icon);
   return (
     <ButtonStyled
       className={className}
@@ -32,6 +35,7 @@ const Button: FC<ButtonProps> = ({
       outline={outline}
       fullWidth={fullWidth}
     >
+      <IconWrapper>{icon}</IconWrapper>
       {children}
     </ButtonStyled>
   );
