@@ -1,45 +1,5 @@
-import { useRouter } from 'next/router';
-import { Button, Container } from 'src/components';
+import Home from '../modules/home';
 
-import {
-  ButtonsContainer,
-  Description,
-  ExploreContainer,
-  HomeView,
-  ImagesContainer,
-  SubTitle,
-  Title,
-} from './Home.styled';
-
-const HomePage = () => {
-  const router = useRouter();
-  const toSignup = () => router.push('/signin');
-  const foo = () => null;
-  return (
-    <HomeView>
-      <Container display={'flex'}>
-        <ExploreContainer>
-          <div>
-            <SubTitle variant={'h5'}>Comics marketplace</SubTitle>
-            <Title variant={'h1'}>Start your comic journey here</Title>
-            <Description variant="p1">
-              Our marketplace is largest world largest marketplace <br /> for
-              comic collectors
-            </Description>
-          </div>
-          <ButtonsContainer>
-            <Button disabled onClick={foo}>
-              Explore
-            </Button>
-            <Button onClick={toSignup}>Create</Button>
-          </ButtonsContainer>
-        </ExploreContainer>
-        <ImagesContainer>
-          <div>2</div>
-        </ImagesContainer>
-      </Container>
-    </HomeView>
-  );
-};
+const HomePage = () => <Home />;
 
 export default HomePage;

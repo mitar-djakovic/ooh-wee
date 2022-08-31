@@ -7,7 +7,7 @@ export default {
   title: 'Component/Button',
   component: Button,
   argTypes: {
-    outline: {
+    secondary: {
       type: 'boolean',
     },
   },
@@ -24,5 +24,5 @@ const Template: ComponentStory<typeof Button> = (args) => {
 export const Primary = Template.bind({});
 
 Primary.args = {
-  outline: false,
+  secondary: false,
 };

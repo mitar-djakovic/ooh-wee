@@ -14,6 +14,8 @@ import {
 import { validationSchema } from './validation';
 
 const SignupForm = () => {
+  const foo = () => null;
+
   return (
     <SignInFormView>
       <LogoContainer>
@@ -121,7 +123,12 @@ const SignupForm = () => {
                 icon={<Icon name="lock" />}
               />
               <ButtonContainer>
-                <Button fullWidth type="submit" disabled={isSubmitting}>
+                <Button
+                  onClick={foo}
+                  fullWidth
+                  type="submit"
+                  disabled={isSubmitting}
+                >
                   Signup
                 </Button>
               </ButtonContainer>

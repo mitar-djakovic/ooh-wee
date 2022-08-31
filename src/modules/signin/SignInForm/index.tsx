@@ -18,6 +18,8 @@ import {
 import { validationSchema } from './validation';
 
 const SignupForm = () => {
+  const foo = () => null;
+
   return (
     <SignInFormView>
       <LogoContainer>
@@ -64,7 +66,12 @@ const SignupForm = () => {
                 icon={<Icon name="lock" />}
               />
               <ButtonContainer>
-                <Button fullWidth type="submit" disabled={isSubmitting}>
+                <Button
+                  onClick={foo}
+                  fullWidth
+                  type="submit"
+                  disabled={isSubmitting}
+                >
                   Signup
                 </Button>
               </ButtonContainer>
@@ -74,13 +81,25 @@ const SignupForm = () => {
                 <Divider />
               </DividerContainer>
               <SocialButtons>
-                <SocialButton icon={<Icon name="google" />} fullWidth>
+                <SocialButton
+                  onClick={foo}
+                  icon={<Icon name="google" />}
+                  fullWidth
+                >
                   Sign Up with Google
                 </SocialButton>
-                <SocialButton icon={<Icon name="facebook" />} fullWidth>
+                <SocialButton
+                  onClick={foo}
+                  icon={<Icon name="facebook" />}
+                  fullWidth
+                >
                   Sign up with Facebook
                 </SocialButton>
-                <SocialButton icon={<Icon name="twitter" />} fullWidth>
+                <SocialButton
+                  onClick={foo}
+                  icon={<Icon name="twitter" />}
+                  fullWidth
+                >
                   Sign up with Twitter
                 </SocialButton>
               </SocialButtons>

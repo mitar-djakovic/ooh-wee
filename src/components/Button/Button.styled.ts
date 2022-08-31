@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 type Button = {
-  outline: boolean | undefined;
+  secondary: boolean;
   disabled: boolean;
   fullWidth: boolean;
 };
@@ -11,16 +11,18 @@ const ButtonStyled = styled.button<Button>`
   font-size: ${(props) => props.theme.typography.paragraphs.p1.fontSize};
   line-height: ${(props) => props.theme.typography.paragraphs.p1.lineHeight};
   background-color: ${(props) =>
-    props.outline ? '#FFF' : props.theme.colors.primary.main};
+    props.secondary ? '#FFF' : props.theme.colors.primary.main};
   box-sizing: border-box;
-  padding: 12px 44px;
-  border: 2px solid ${(props) => props.theme.colors.primary.main};
+  padding: 8px 30px;
+  border: 1px solid
+    ${(props) =>
+      props.secondary
+        ? 'rgba(207, 219, 213, 0.6)'
+        : props.theme.colors.primary.main};
   border-radius: 48px;
-  //box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.04),
-  //  0px 2px 4px rgba(96, 97, 112, 0.16);
   color: ${(props) =>
-    props.outline
-      ? props.theme.colors.primary.main
+    props.secondary
+      ? props.theme.colors.random.black
       : props.theme.colors.random.white};
   font-style: normal;
   letter-spacing: 0.2px;
@@ -30,9 +32,12 @@ const ButtonStyled = styled.button<Button>`
   justify-content: center;
   &:disabled {
     background-color: ${(props) =>
-      !props.outline && props.theme.colors.primary.hover};
-    color: ${(props) => props.outline && props.theme.colors.primary.hover};
-    border-color: ${(props) => props.theme.colors.primary.hover};
+      !props.secondary && props.theme.colors.primary.hover};
+    color: ${(props) => props.secondary && props.theme.colors.random.black};
+    border-color: ${(props) =>
+      props.secondary
+        ? 'rgba(207, 219, 213, 0.6)'
+        : props.theme.colors.primary.hover};
   }
   &:hover {
     cursor: pointer;
