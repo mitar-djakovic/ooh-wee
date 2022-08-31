@@ -17,10 +17,11 @@ interface InputProps {
   onBlur: () => void;
   id: string;
   value: string;
-  showStatus: boolean;
-  icon: JSX.Element;
+  showStatus?: boolean;
+  icon?: JSX.Element;
   fullWidth?: boolean;
   type?: string;
+  className?: string;
 }
 
 const Input: FC<InputProps> = ({
@@ -35,10 +36,12 @@ const Input: FC<InputProps> = ({
   icon,
   fullWidth,
   type = 'text',
+  className,
 }: InputProps) => (
   <InputContainer fullWidth={fullWidth}>
     {label && <Label htmlFor={name}>{label}</Label>}
     <InputStyled
+      className={className}
       type={type}
       id={id}
       onChange={onChange}
