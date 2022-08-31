@@ -12,7 +12,15 @@ const PromoView = styled.div`
 const PromoBackground = styled(Image)`
   width: 100%;
   height: 724px;
-  filter: blur(4px);
+  //filter: blur(4px);
+`;
+
+const PromoBackgroundOpacity = styled.div`
+  width: 100%;
+  height: 724px;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  z-index: 100;
 `;
 
 const PromoBackgroundContainer = styled.div`
@@ -49,6 +57,7 @@ export {
   Content,
   PromoBackground,
   PromoBackgroundContainer,
+  PromoBackgroundOpacity,
   PromoView,
   SubTitle,
   Title,

@@ -5,6 +5,7 @@ import {
   Content,
   PromoBackground,
   PromoBackgroundContainer,
+  PromoBackgroundOpacity,
   PromoView,
   SubTitle,
   Title,
@@ -14,6 +15,7 @@ import PromoSearchForm from './PromoSearchForm';
 const Promo = () => (
   <PromoView>
     <PromoBackgroundContainer>
+      <PromoBackgroundOpacity />
       <PromoBackground src={promoBg} alt="Promo background" />
     </PromoBackgroundContainer>
     <Container>
