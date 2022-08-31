@@ -6,8 +6,8 @@ type Type = 'submit' | 'reset' | 'button';
 
 interface ButtonProps {
   children: string;
-  onClick?: () => void;
-  outline?: boolean;
+  onClick: () => void;
+  secondary?: boolean;
   disabled?: boolean;
   type?: Type;
   fullWidth?: boolean;
@@ -18,7 +18,7 @@ interface ButtonProps {
 const Button: FC<ButtonProps> = ({
   children,
   onClick,
-  outline = false,
+  secondary = false,
   disabled = false,
   type = 'button',
   fullWidth = false,
@@ -31,10 +31,10 @@ const Button: FC<ButtonProps> = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      outline={outline}
+      secondary={secondary}
       fullWidth={fullWidth}
     >
-      <IconWrapper>{icon}</IconWrapper>
+      {icon && <IconWrapper>{icon}</IconWrapper>}
       {children}
     </ButtonStyled>
   );
