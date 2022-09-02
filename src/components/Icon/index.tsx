@@ -7,6 +7,7 @@ import {
   Facebook,
   Google,
   Lock,
+  Search,
   Twitter,
   User,
   WarningCircle,
@@ -39,6 +40,8 @@ const renderIcon = (name: string) => {
       return <Twitter />;
     case 'facebook':
       return <Facebook />;
+    case 'search':
+      return <Search />;
   }
 };
 
@@ -53,7 +56,8 @@ type Name =
   | 'user'
   | 'google'
   | 'twitter'
-  | 'facebook';
+  | 'facebook'
+  | 'search';
 
 interface IconProps {
   name: Name;

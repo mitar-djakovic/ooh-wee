@@ -5,7 +5,7 @@ import { ButtonStyled, IconWrapper } from './Button.styled';
 type Type = 'submit' | 'reset' | 'button';
 
 interface ButtonProps {
-  children: string;
+  children?: string;
   onClick: () => void;
   secondary?: boolean;
   disabled?: boolean;
