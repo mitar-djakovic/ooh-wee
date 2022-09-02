@@ -1,5 +1,5 @@
-import Home from '../modules/home';
+import Explore from '../modules/explore';
 
-const HomePage = () => <Home />;
+const ExplorePage = () => <Explore />;
 
-export default HomePage;
+export default ExplorePage;

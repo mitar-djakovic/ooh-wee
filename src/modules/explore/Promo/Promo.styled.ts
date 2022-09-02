@@ -4,9 +4,8 @@ import styled from 'styled-components';
 
 const PromoView = styled.div`
   width: 100%;
-  background-color: aqua;
   position: relative;
-  height: 100%;
+  height: 724px;
 `;
 
 const PromoBackground = styled(Image)`
