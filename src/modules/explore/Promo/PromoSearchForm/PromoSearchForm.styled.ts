@@ -4,7 +4,7 @@ const PromoSearchFormView = styled.div``;
 
 const SearchContainer = styled.div`
   position: relative;
-  width: 6.28rem;
+  width: 62.8rem;
   display: flex;
 
   & > div {

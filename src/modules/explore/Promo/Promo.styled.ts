@@ -5,30 +5,30 @@ import styled from 'styled-components';
 const PromoView = styled.div`
   width: 100%;
   position: relative;
-  height: 7.24rem;
+  height: 72.4rem;
 `;
 
 const PromoBackground = styled(Image)`
   width: 100%;
-  height: 7.24rem;
+  height: 72.4rem;
   //filter: blur(4px);
 `;
 
 const PromoBackgroundOpacity = styled.div`
   width: 100%;
-  height: 7.24rem;
+  height: 72.4rem;
   background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   z-index: 100;
 `;
 
 const PromoBackgroundContainer = styled.div`
-  height: 7.24rem;
+  height: 72.4rem;
   width: 100%;
   position: absolute;
   z-index: 1;
   span {
-    height: 7.24rem !important;
+    height: 72.4rem !important;
   }
 `;
 
