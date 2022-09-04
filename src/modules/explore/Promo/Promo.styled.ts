@@ -5,30 +5,30 @@ import styled from 'styled-components';
 const PromoView = styled.div`
   width: 100%;
   position: relative;
-  height: 724px;
+  height: 7.24rem;
 `;
 
 const PromoBackground = styled(Image)`
   width: 100%;
-  height: 724px;
+  height: 7.24rem;
   //filter: blur(4px);
 `;
 
 const PromoBackgroundOpacity = styled.div`
   width: 100%;
-  height: 724px;
+  height: 7.24rem;
   background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   z-index: 100;
 `;
 
 const PromoBackgroundContainer = styled.div`
-  height: 724px;
+  height: 7.24rem;
   width: 100%;
   position: absolute;
   z-index: 1;
   span {
-    height: 724px !important;
+    height: 7.24rem !important;
   }
 `;
 
@@ -38,17 +38,17 @@ const Content = styled.div`
   height: 100%;
   z-index: 10;
   box-sizing: border-box;
-  padding: 150px 0;
+  padding: 15rem 0;
 `;
 
 const Title = styled(Typography)`
   color: #ffffff;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 `;
 
 const SubTitle = styled(Typography)`
   color: #ffffff;
-  margin-bottom: 48px;
+  margin-bottom: 4.8rem;
   font-weight: 400;
 `;
 

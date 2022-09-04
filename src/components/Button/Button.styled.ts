@@ -13,19 +13,19 @@ const ButtonStyled = styled.button<Button>`
   background-color: ${(props) =>
     props.secondary ? '#FFF' : props.theme.colors.primary.main};
   box-sizing: border-box;
-  padding: 8px 30px;
-  border: 1px solid
+  padding: 0.8rem 3rem;
+  border: 0.1rem solid
     ${(props) =>
       props.secondary
         ? 'rgba(207, 219, 213, 0.6)'
         : props.theme.colors.primary.main};
-  border-radius: 48px;
+  border-radius: 4.8rem;
   color: ${(props) =>
     props.secondary
       ? props.theme.colors.random.black
       : props.theme.colors.random.white};
   font-style: normal;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.02rem;
   width: ${(props) => props.fullWidth && '100%'};
   display: flex;
   align-items: center;
@@ -45,7 +45,7 @@ const ButtonStyled = styled.button<Button>`
 `;
 
 const IconWrapper = styled.div`
-  margin-right: 10px;
+  margin-right: 1rem;
 `;
 
 export { ButtonStyled, IconWrapper };

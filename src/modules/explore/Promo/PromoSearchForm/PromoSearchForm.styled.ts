@@ -4,7 +4,7 @@ const PromoSearchFormView = styled.div``;
 
 const SearchContainer = styled.div`
   position: relative;
-  width: 628px;
+  width: 6.28rem;
   display: flex;
 
   & > div {
@@ -12,18 +12,18 @@ const SearchContainer = styled.div`
 
     & > input {
       margin: 0;
-      padding: 30px 17px 30px 34px;
-      border-radius: 86px;
+      padding: 3rem 1.7rem 3rem 3.4rem;
+      border-radius: 8.8rem;
       background-color: rgba(255, 255, 255, 0.8);
     }
   }
 
   & > button {
     position: absolute;
-    top: 12px;
-    right: 17px;
-    width: 54px;
-    height: 54px;
+    top: 1.2rem;
+    right: 1.7rem;
+    width: 5.4rem;
+    height: 5.4rem;
     border-radius: 50%;
     padding: 0;
     border: none;
