@@ -4,7 +4,7 @@ const DesktopNavView = styled.nav`
   display: flex;
 
   button:first-child {
-    margin-right: 8px;
+    margin-right: 0.8rem;
   }
 `;
 

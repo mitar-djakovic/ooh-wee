@@ -64,50 +64,50 @@ export const theme = {
   typography: {
     headings: {
       h1: {
-        fontSize: '42px',
-        lineHeight: '51px',
+        fontSize: '4.2rem',
+        lineHeight: '5.1rem',
         fontWeight: 800,
       },
       h2: {
-        fontSize: '34px',
-        lineHeight: '41px',
+        fontSize: '3.4rem',
+        lineHeight: '4.1rem',
         fontWeight: 800,
       },
       h3: {
-        fontSize: '28px',
-        lineHeight: '34px',
+        fontSize: '2,8rem',
+        lineHeight: '3.4rem',
         fontWeight: 800,
       },
       h4: {
-        fontSize: '24px',
-        lineHeight: '29px',
+        fontSize: '2.4rem',
+        lineHeight: '2.9rem',
         fontWeight: 800,
       },
       h5: {
-        fontSize: '20px',
-        lineHeight: '28px',
+        fontSize: '2rem',
+        lineHeight: '2.8rem',
         fontWeight: 800,
       },
       h6: {
-        fontSize: '18px',
-        lineHeight: '24px',
+        fontSize: '1.8rem',
+        lineHeight: '2.4rem',
         fontWeight: 800,
       },
     },
     paragraphs: {
       p1: {
-        fontSize: '16px',
-        lineHeight: '24px',
+        fontSize: '1.6rem',
+        lineHeight: '2.4rem',
         fontWeight: 500,
       },
       p2: {
-        fontSize: '14px',
-        lineHeight: '21px',
+        fontSize: '1.4rem',
+        lineHeight: '2.1rem',
         fontWeight: 500,
       },
       p3: {
-        fontSize: '12px',
-        lineHeight: '18px',
+        fontSize: '1.2rem',
+        lineHeight: '1.8rem',
         fontWeight: 500,
       },
     },

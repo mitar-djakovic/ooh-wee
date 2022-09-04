@@ -6,29 +6,29 @@ const SignInFormView = styled.div`
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  padding: 90px 110px;
+  padding: 9rem 11rem;
 `;
 
 const ButtonContainer = styled.div`
-  margin: 30px 0;
+  margin: 3rem 0;
 `;
 
 const Title = styled(Typography)`
   text-align: center;
-  margin-bottom: 8px;
+  margin-bottom: 0.8rem;
 `;
 
 const SubTitle = styled(Typography)`
   text-align: center;
   color: #5d5d5b;
-  margin-bottom: 36px;
+  margin-bottom: 3.6rem;
 `;
 
 const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
 `;
 
 export { ButtonContainer, LogoContainer, SignInFormView, SubTitle, Title };

@@ -65,7 +65,7 @@ interface IconProps {
   color?: string;
 }
 
-const Icon: FC<IconProps> = ({ name, size = '18px', color = '#000000' }) => (
+const Icon: FC<IconProps> = ({ name, size = '1.8rem', color = '#000000' }) => (
   <IconView size={size} color={color}>
     {renderIcon(name)}
   </IconView>
