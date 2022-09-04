@@ -1,13 +1,14 @@
-import Header from '../../layouts/Header';
+import { Page } from 'src/layouts';
 
 import { ExploreView } from './Explore.styled';
 import Promo from './Promo';
 
 const Explore = () => (
-  <ExploreView>
-    <Header />
-    <Promo />
-  </ExploreView>
+  <Page>
+    <ExploreView>
+      <Promo />
+    </ExploreView>
+  </Page>
 );
 
 export default Explore;
