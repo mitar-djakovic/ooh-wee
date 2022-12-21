@@ -41,9 +41,7 @@ const Input: FC<InputProps> = ({
   className,
   status,
   message,
-}: InputProps) => {
-  console.log('status', status);
-  console.log('message', message);
+}) => {
   return (
     <InputContainer fullWidth={fullWidth}>
       {label && <Label htmlFor={name}>{label}</Label>}
@@ -58,7 +56,7 @@ const Input: FC<InputProps> = ({
         value={value}
         status={status}
       />
-      <IconWrapper>{icon}</IconWrapper>
+      <IconWrapper status={status}>{icon}</IconWrapper>
       {message && <InputStatus status={status}>{message}</InputStatus>}
     </InputContainer>
   );

@@ -62,10 +62,21 @@ const InputStatus = styled.div<{ status?: Status }>`
       : props.theme.colors.status.success.primary};
 `;
 
-const IconWrapper = styled.div`
+const IconWrapper = styled.div<{ status?: Status }>`
   position: absolute;
   top: 3.4rem;
   right: 1.5rem;
+  div {
+    svg {
+      fill: ${(props) =>
+        // eslint-disable-next-line no-nested-ternary
+        props.status === 'error'
+          ? props.theme.colors.status.error.primary
+          : props.status === 'success'
+          ? props.theme.colors.status.success.primary
+          : ''};
+    }
+  }
 `;
 
 export { IconWrapper, InputContainer, InputStatus, InputStyled, Label };

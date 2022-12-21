@@ -34,6 +34,15 @@ const SignupForm = () => {
     }
   };
 
+  const handleStatus = (touched?: boolean, error?: string): string | void => {
+    if (touched && error) {
+      return 'error';
+    }
+    if (touched && !error) {
+      return 'success';
+    }
+  };
+
   return (
     <SignInFormView>
       <LogoContainer>
@@ -62,8 +71,6 @@ const SignupForm = () => {
           errors,
           touched,
         }) => {
-          console.log('errors', errors);
-          console.log('touched', touched);
           return (
             <Form>
               <Field
@@ -77,14 +84,7 @@ const SignupForm = () => {
                 placeholder="Enter your first name"
                 label="First Name"
                 value={values.firstName}
-                status={
-                  // eslint-disable-next-line no-nested-ternary
-                  touched.firstName && errors.firstName
-                    ? 'error'
-                    : touched.firstName && !errors.firstName
-                    ? 'success'
-                    : ''
-                }
+                status={handleStatus(touched.firstName, errors.firstName)}
                 message={
                   touched.firstName && errors.firstName ? errors.firstName : ''
                 }
@@ -102,14 +102,7 @@ const SignupForm = () => {
                 icon={<Icon name="envelope" />}
                 label="Last Name"
                 value={values.lastName}
-                status={
-                  // eslint-disable-next-line no-nested-ternary
-                  touched.lastName && errors.lastName
-                    ? 'error'
-                    : touched.lastName && !errors.lastName
-                    ? 'success'
-                    : ''
-                }
+                status={handleStatus(touched.lastName, errors.lastName)}
                 message={
                   touched.lastName && errors.lastName ? errors.lastName : ''
                 }
@@ -127,14 +120,7 @@ const SignupForm = () => {
                 label="Email"
                 icon={<Icon name="envelope" />}
                 value={values.email}
-                status={
-                  // eslint-disable-next-line no-nested-ternary
-                  touched.email && errors.email
-                    ? 'error'
-                    : touched.email && !errors.email
-                    ? 'success'
-                    : ''
-                }
+                status={handleStatus(touched.email, errors.email)}
                 message={touched.email && errors.email ? errors.email : ''}
               />
               <Field
@@ -150,14 +136,7 @@ const SignupForm = () => {
                 placeholder="Enter your password"
                 label="Password"
                 value={values.password}
-                status={
-                  // eslint-disable-next-line no-nested-ternary
-                  touched.password && errors.password
-                    ? 'error'
-                    : touched.password && !errors.password
-                    ? 'success'
-                    : ''
-                }
+                status={handleStatus(touched.password, errors.password)}
                 message={
                   touched.password && errors.password ? errors.password : ''
                 }
@@ -175,14 +154,10 @@ const SignupForm = () => {
                 label="Confirm Password"
                 value={values.confirmPassword}
                 icon={<Icon name="lock" />}
-                status={
-                  // eslint-disable-next-line no-nested-ternary
-                  touched.confirmPassword && errors.confirmPassword
-                    ? 'error'
-                    : touched.confirmPassword && !errors.confirmPassword
-                    ? 'success'
-                    : ''
-                }
+                status={handleStatus(
+                  touched.confirmPassword,
+                  errors.confirmPassword
+                )}
                 message={
                   touched.confirmPassword && errors.confirmPassword
                     ? errors.confirmPassword
