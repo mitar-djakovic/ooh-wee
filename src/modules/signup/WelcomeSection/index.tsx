@@ -15,7 +15,7 @@ import {
 
 const WelcomeSection = () => {
   const router = useRouter();
-  const onClick = () => router.push('/signin');
+  const onClick = () => router.push('/login');
 
   return (
     <WelcomeSectionView>

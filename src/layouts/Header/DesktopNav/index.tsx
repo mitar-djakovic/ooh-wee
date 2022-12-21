@@ -7,7 +7,7 @@ const DesktopNav = () => {
   const router = useRouter();
 
   const onSignInClick = () => {
-    router.push('/signin');
+    router.push('/login');
   };
 
   const onSignUpClick = () => {
