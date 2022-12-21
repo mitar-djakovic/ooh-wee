@@ -13,7 +13,7 @@ const WelcomeSectionView = styled.div`
 
 const BackgroundImage = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -41,7 +41,7 @@ const Title = styled(Typography)`
 
 const ContentContainer = styled.div`
   position: absolute;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   box-sizing: border-box;
   padding: 10rem 9rem 9rem 9rem;

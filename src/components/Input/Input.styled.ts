@@ -1,12 +1,24 @@
 import styled from 'styled-components';
 
-const InputStyled = styled.input`
+type Status = 'success' | 'error';
+
+const InputStyled = styled.input<{ status?: Status }>`
   width: 100%;
   background-color: #ffffff;
   box-sizing: border-box;
   padding: 1.2rem 2rem;
   border-radius: 2.4rem;
-  border: 0.1rem solid rgba(207, 219, 213, 0.6);
+  outline: none;
+  border: 0.1rem solid
+    ${(props) => {
+      if (props.status === 'error') {
+        return props.theme.colors.status.error.primary;
+      } else if (props.status === 'success') {
+        return props.theme.colors.status.success.primary;
+      } else {
+        return 'rgba(207, 219, 213, 0.6)';
+      }
+    }};
   margin-top: 0.4rem;
   ::placeholder {
     font-size: ${(props) => props.theme.typography.paragraphs.p1.fontSize};
@@ -31,9 +43,7 @@ const Label = styled.label`
   position: relative;
 `;
 
-type Status = 'success' | 'info' | 'warning' | 'error';
-
-const InputMessage = styled.div<{ status?: Status }>`
+const InputStatus = styled.div<{ status?: Status }>`
   margin-top: 0.8rem;
   border-radius: 0.8rem;
   display: flex;
@@ -45,17 +55,28 @@ const InputMessage = styled.div<{ status?: Status }>`
     if (props.status === 'error') {
       return props.theme.colors.status.error.secondary;
     }
-    return 'green';
   }};
-  color: ${(props) => props.theme.colors.status.error.primary};
-  font-size: 1.6rem;
-  line-height: 2rem;
+  color: ${(props) =>
+    props.status === 'error'
+      ? props.theme.colors.status.error.primary
+      : props.theme.colors.status.success.primary};
 `;
 
-const IconWrapper = styled.div`
+const IconWrapper = styled.div<{ status?: Status }>`
   position: absolute;
   top: 3.4rem;
   right: 1.5rem;
+  div {
+    svg {
+      fill: ${(props) =>
+        // eslint-disable-next-line no-nested-ternary
+        props.status === 'error'
+          ? props.theme.colors.status.error.primary
+          : props.status === 'success'
+          ? props.theme.colors.status.success.primary
+          : ''};
+    }
+  }
 `;
 
-export { IconWrapper, InputContainer, InputMessage, InputStyled, Label };
+export { IconWrapper, InputContainer, InputStatus, InputStyled, Label };

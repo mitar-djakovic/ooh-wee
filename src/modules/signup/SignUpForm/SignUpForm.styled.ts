@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import { Typography } from '../../../components';
 
+type Status = 'success' | 'error';
+
 const SignInFormView = styled.div`
   width: 100%;
   height: 100%;
@@ -31,4 +33,36 @@ const LogoContainer = styled.div`
   margin-bottom: 3rem;
 `;
 
-export { ButtonContainer, LogoContainer, SignInFormView, SubTitle, Title };
+const SubmitStatus = styled.div<{ status?: Status }>`
+  margin-top: 0.8rem;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem 1rem 1rem 2rem;
+  gap: 0.4rem;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  background-color: ${(props) => {
+    if (props.status === 'error') {
+      return props.theme.colors.status.error.secondary;
+    }
+
+    if (props.status === 'success') {
+      return props.theme.colors.status.success.secondary;
+    }
+  }};
+  color: ${(props) =>
+    props.status === 'error'
+      ? props.theme.colors.status.error.primary
+      : props.theme.colors.status.success.primary};
+`;
+
+export {
+  ButtonContainer,
+  LogoContainer,
+  SignInFormView,
+  SubmitStatus,
+  SubTitle,
+  Title,
+};
