@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-const SignInView = styled.div`
+const LoginView = styled.div`
   height: 100vh;
   display: flex;
   overflow: hidden;
 `;
 
-export { SignInView };
+export { LoginView };

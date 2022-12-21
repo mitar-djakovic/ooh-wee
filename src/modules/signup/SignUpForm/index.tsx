@@ -24,8 +24,8 @@ interface Values {
 }
 
 const SignupForm: FC = () => {
-  const [signUpErrorMessage, setSignUpErrorMessage] = useState('');
-  const [signUpSuccessMessage, setSignUpSuccessMessage] = useState('');
+  const [signUpError, setSignUpError] = useState('');
+  const [signUpSuccess, setSignUpSuccess] = useState('');
 
   const foo = () => null;
 
@@ -37,13 +37,13 @@ const SignupForm: FC = () => {
       setSubmitting(true);
       const response = await signUp(values);
       if (response.status === 201) {
-        setSignUpErrorMessage('');
-        setSignUpSuccessMessage(response.message);
+        setSignUpError('');
+        setSignUpSuccess(response.message);
       }
       setSubmitting(false);
     } catch (error: any) {
-      setSignUpSuccessMessage('');
-      setSignUpErrorMessage(error.message);
+      setSignUpSuccess('');
+      setSignUpError(error.message);
       setSubmitting(false);
     }
   };
@@ -177,11 +177,9 @@ const SignupForm: FC = () => {
                 }
               />
               <ButtonContainer>
-                {(signUpErrorMessage || signUpSuccessMessage) && (
-                  <SubmitStatus
-                    status={signUpErrorMessage ? 'error' : 'success'}
-                  >
-                    {signUpErrorMessage || signUpSuccessMessage}
+                {(signUpError || signUpSuccess) && (
+                  <SubmitStatus status={signUpError ? 'error' : 'success'}>
+                    {signUpError || signUpSuccess}
                   </SubmitStatus>
                 )}
                 <Button

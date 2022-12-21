@@ -9,6 +9,11 @@ interface SignUpValues {
   confirmPassword: string;
 }
 
+interface SignInValues {
+  email: string;
+  password: string;
+}
+
 const signUp = async (values: SignUpValues) => {
   try {
     const { data } = await axios.post('/auth/signup', JSON.stringify(values));
@@ -21,4 +26,17 @@ const signUp = async (values: SignUpValues) => {
   }
 };
 
-export { signUp };
+const login = async (values: SignInValues) => {
+  console.log('values', values);
+  try {
+    const { data } = await axios.post('/auth/login', JSON.stringify(values));
+
+    return data;
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      throw error.response?.data;
+    }
+  }
+};
+
+export { login, signUp };

@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { Field, Form, Formik } from 'formik';
 import Image from 'next/image';
+import { login } from 'src/api/auth';
 import { logoImg } from 'src/assets/images';
 import { Button, Icon, Input } from 'src/components';
 
@@ -8,33 +10,75 @@ import {
   Divider,
   DividerContainer,
   DividerText,
+  LoginFormView,
   LogoContainer,
-  SignInFormView,
   SocialButton,
   SocialButtons,
+  SubmitStatus,
   SubTitle,
   Title,
-} from './SignInForm.styled';
+} from './LoginForm.styled';
 import { validationSchema } from './validation';
 
-const SignupForm = () => {
+interface Values {
+  email: string;
+  password: string;
+}
+
+const LoginForm = () => {
+  const [loginError, setLoginError] = useState('');
   const foo = () => null;
 
+  const onSubmit = async (
+    values: Values,
+    setSubmitting: (status: boolean) => void
+  ) => {
+    try {
+      setSubmitting(true);
+      const response = await login(values);
+      if (response.status === 200) {
+        console.log('redirect');
+      }
+      setSubmitting(false);
+    } catch (error: any) {
+      setLoginError(error.message);
+      setSubmitting(false);
+    }
+  };
+
+  const handleStatus = (touched?: boolean, error?: string): string | void => {
+    if (touched && error) {
+      return 'error';
+    }
+    if (touched && !error) {
+      return 'success';
+    }
+  };
+
   return (
-    <SignInFormView>
+    <LoginFormView>
       <LogoContainer>
         <Image src={logoImg} alt="Logo" />
       </LogoContainer>
-      <Title variant="h1">Sign In</Title>
+      <Title variant="h1">Login</Title>
       <SubTitle variant="p1">
-        Take the next step and sign in to your account
+        Take the next step and login to your account
       </SubTitle>
       <Formik
-        onSubmit={(values) => console.log('submit', values)}
+        onSubmit={(values: Values, { setSubmitting }) =>
+          onSubmit(values, setSubmitting)
+        }
         initialValues={{ email: '', password: '' }}
         validationSchema={validationSchema}
       >
-        {({ values, isSubmitting, handleBlur, handleChange }) => {
+        {({
+          values,
+          isSubmitting,
+          handleBlur,
+          handleChange,
+          errors,
+          touched,
+        }) => {
           return (
             <Form>
               <Field
@@ -50,6 +94,8 @@ const SignupForm = () => {
                 placeholder="Enter your email"
                 label="Email"
                 value={values.email}
+                status={handleStatus(touched.email, errors.email)}
+                message={touched.email && errors.email ? errors.email : ''}
               />
               <Field
                 onChange={handleChange}
@@ -64,15 +110,22 @@ const SignupForm = () => {
                 label="Password"
                 value={values.password}
                 icon={<Icon name="lock" />}
+                status={handleStatus(touched.password, errors.password)}
+                message={
+                  touched.password && errors.password ? errors.password : ''
+                }
               />
               <ButtonContainer>
+                {loginError && (
+                  <SubmitStatus status="error">{loginError}</SubmitStatus>
+                )}
                 <Button
                   onClick={foo}
                   fullWidth
                   type="submit"
                   disabled={isSubmitting}
                 >
-                  Signup
+                  Login
                 </Button>
               </ButtonContainer>
               <DividerContainer>
@@ -107,8 +160,8 @@ const SignupForm = () => {
           );
         }}
       </Formik>
-    </SignInFormView>
+    </LoginFormView>
   );
 };
 
-export default SignupForm;
+export default LoginForm;

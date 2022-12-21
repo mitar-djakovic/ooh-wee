@@ -1,7 +1,9 @@
 import { Button, Typography } from 'src/components';
 import styled from 'styled-components';
 
-const SignInFormView = styled.div`
+type Status = 'success' | 'error';
+
+const LoginFormView = styled.div`
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -55,15 +57,41 @@ const LogoContainer = styled.div`
   margin-bottom: 3rem;
 `;
 
+const SubmitStatus = styled.div<{ status?: Status }>`
+  margin-top: 0.8rem;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem 1rem 1rem 2rem;
+  gap: 0.4rem;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  background-color: ${(props) => {
+    if (props.status === 'error') {
+      return props.theme.colors.status.error.secondary;
+    }
+
+    if (props.status === 'success') {
+      return props.theme.colors.status.success.secondary;
+    }
+  }};
+  color: ${(props) =>
+    props.status === 'error'
+      ? props.theme.colors.status.error.primary
+      : props.theme.colors.status.success.primary};
+`;
+
 export {
   ButtonContainer,
   Divider,
   DividerContainer,
   DividerText,
+  LoginFormView,
   LogoContainer,
-  SignInFormView,
   SocialButton,
   SocialButtons,
+  SubmitStatus,
   SubTitle,
   Title,
 };
