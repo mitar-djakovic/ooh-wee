@@ -54,7 +54,16 @@ const SignupForm = () => {
         }}
         validationSchema={validationSchema}
       >
-        {({ values, isSubmitting, handleBlur, handleChange }) => {
+        {({
+          values,
+          isSubmitting,
+          handleBlur,
+          handleChange,
+          errors,
+          touched,
+        }) => {
+          console.log('errors', errors);
+          console.log('touched', touched);
           return (
             <Form>
               <Field
@@ -63,12 +72,22 @@ const SignupForm = () => {
                 component={Input}
                 name="firstName"
                 id="firstName"
-                showStatus
                 icon={<Icon name="user" />}
                 fullWidth
                 placeholder="Enter your first name"
                 label="First Name"
                 value={values.firstName}
+                status={
+                  // eslint-disable-next-line no-nested-ternary
+                  touched.firstName && errors.firstName
+                    ? 'error'
+                    : touched.firstName && !errors.firstName
+                    ? 'success'
+                    : ''
+                }
+                message={
+                  touched.firstName && errors.firstName ? errors.firstName : ''
+                }
               />
               <Field
                 onChange={handleChange}
@@ -83,6 +102,17 @@ const SignupForm = () => {
                 icon={<Icon name="envelope" />}
                 label="Last Name"
                 value={values.lastName}
+                status={
+                  // eslint-disable-next-line no-nested-ternary
+                  touched.lastName && errors.lastName
+                    ? 'error'
+                    : touched.lastName && !errors.lastName
+                    ? 'success'
+                    : ''
+                }
+                message={
+                  touched.lastName && errors.lastName ? errors.lastName : ''
+                }
               />
               <Field
                 onChange={handleChange}
@@ -97,6 +127,15 @@ const SignupForm = () => {
                 label="Email"
                 icon={<Icon name="envelope" />}
                 value={values.email}
+                status={
+                  // eslint-disable-next-line no-nested-ternary
+                  touched.email && errors.email
+                    ? 'error'
+                    : touched.email && !errors.email
+                    ? 'success'
+                    : ''
+                }
+                message={touched.email && errors.email ? errors.email : ''}
               />
               <Field
                 onChange={handleChange}
@@ -111,6 +150,17 @@ const SignupForm = () => {
                 placeholder="Enter your password"
                 label="Password"
                 value={values.password}
+                status={
+                  // eslint-disable-next-line no-nested-ternary
+                  touched.password && errors.password
+                    ? 'error'
+                    : touched.password && !errors.password
+                    ? 'success'
+                    : ''
+                }
+                message={
+                  touched.password && errors.password ? errors.password : ''
+                }
               />
               <Field
                 onChange={handleChange}
@@ -125,6 +175,19 @@ const SignupForm = () => {
                 label="Confirm Password"
                 value={values.confirmPassword}
                 icon={<Icon name="lock" />}
+                status={
+                  // eslint-disable-next-line no-nested-ternary
+                  touched.confirmPassword && errors.confirmPassword
+                    ? 'error'
+                    : touched.confirmPassword && !errors.confirmPassword
+                    ? 'success'
+                    : ''
+                }
+                message={
+                  touched.confirmPassword && errors.confirmPassword
+                    ? errors.confirmPassword
+                    : ''
+                }
               />
               <ButtonContainer>
                 <Button

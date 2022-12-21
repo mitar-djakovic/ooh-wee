@@ -3,10 +3,12 @@ import { FC } from 'react';
 import {
   IconWrapper,
   InputContainer,
-  // InputMessage,
+  InputStatus,
   InputStyled,
   Label,
 } from './Input.styled';
+
+type Status = 'success' | 'error';
 
 interface InputProps {
   placeholder: string;
@@ -17,11 +19,12 @@ interface InputProps {
   onBlur: () => void;
   id: string;
   value: string;
-  showStatus?: boolean;
   icon?: JSX.Element;
   fullWidth?: boolean;
   type?: string;
   className?: string;
+  status?: Status;
+  message?: string;
 }
 
 const Input: FC<InputProps> = ({
@@ -32,27 +35,33 @@ const Input: FC<InputProps> = ({
   onChange,
   id,
   value,
-  // showStatus,
   icon,
   fullWidth,
   type = 'text',
   className,
-}: InputProps) => (
-  <InputContainer fullWidth={fullWidth}>
-    {label && <Label htmlFor={name}>{label}</Label>}
-    <InputStyled
-      className={className}
-      type={type}
-      id={id}
-      onChange={onChange}
-      onBlur={onBlur}
-      name={name}
-      placeholder={placeholder}
-      value={value}
-    />
-    <IconWrapper>{icon}</IconWrapper>
-    {/*{showStatus && <InputMessage status={'error'}>{icon} Hello</InputMessage>}*/}
-  </InputContainer>
-);
+  status,
+  message,
+}: InputProps) => {
+  console.log('status', status);
+  console.log('message', message);
+  return (
+    <InputContainer fullWidth={fullWidth}>
+      {label && <Label htmlFor={name}>{label}</Label>}
+      <InputStyled
+        className={className}
+        type={type}
+        id={id}
+        onChange={onChange}
+        onBlur={onBlur}
+        name={name}
+        placeholder={placeholder}
+        value={value}
+        status={status}
+      />
+      <IconWrapper>{icon}</IconWrapper>
+      {message && <InputStatus status={status}>{message}</InputStatus>}
+    </InputContainer>
+  );
+};
 
 export default Input;
