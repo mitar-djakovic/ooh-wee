@@ -1,3 +1,4 @@
+import { FC, useState } from 'react';
 import { Field, Form, Formik } from 'formik';
 import Image from 'next/image';
 import { signUp } from 'src/api/auth';
@@ -8,6 +9,7 @@ import {
   ButtonContainer,
   LogoContainer,
   SignInFormView,
+  SubmitStatus,
   SubTitle,
   Title,
 } from './SignUpForm.styled';
@@ -21,16 +23,28 @@ interface Values {
   confirmPassword: string;
 }
 
-const SignupForm = () => {
+const SignupForm: FC = () => {
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+
   const foo = () => null;
 
-  const onSubmit = async (values: Values) => {
-    console.log('values', values);
+  const onSubmit = async (
+    values: Values,
+    setSubmitting: (status: boolean) => void
+  ) => {
     try {
+      setSubmitting(true);
       const response = await signUp(values);
-      console.log('-----', response);
-    } catch (error) {
-      console.log('error1', error);
+      if (response.status === 201) {
+        setErrorMessage('');
+        setSuccessMessage(response.message);
+      }
+      setSubmitting(false);
+    } catch (error: any) {
+      setSuccessMessage('');
+      setErrorMessage(error.message);
+      setSubmitting(false);
     }
   };
 
@@ -53,7 +67,9 @@ const SignupForm = () => {
         Take the next step and sign up to your account
       </SubTitle>
       <Formik
-        onSubmit={(values) => onSubmit(values)}
+        onSubmit={(values, { setSubmitting }) =>
+          onSubmit(values, setSubmitting)
+        }
         initialValues={{
           firstName: '',
           lastName: '',
@@ -96,7 +112,6 @@ const SignupForm = () => {
                 type="text"
                 name="lastName"
                 id="lastName"
-                showStatus
                 fullWidth
                 placeholder="Enter your last name"
                 icon={<Icon name="envelope" />}
@@ -114,7 +129,6 @@ const SignupForm = () => {
                 type="email"
                 name="email"
                 id="email"
-                showStatus
                 fullWidth
                 placeholder="Enter your email"
                 label="Email"
@@ -130,7 +144,6 @@ const SignupForm = () => {
                 type="password"
                 name="password"
                 id="password"
-                showStatus
                 icon={<Icon name="eye-closed" />}
                 fullWidth
                 placeholder="Enter your password"
@@ -148,7 +161,6 @@ const SignupForm = () => {
                 type="password"
                 name="confirmPassword"
                 id="confirmPassword"
-                showStatus
                 fullWidth
                 placeholder="Confirm your password"
                 label="Confirm Password"
@@ -165,6 +177,11 @@ const SignupForm = () => {
                 }
               />
               <ButtonContainer>
+                {(errorMessage || successMessage) && (
+                  <SubmitStatus status={errorMessage ? 'error' : 'success'}>
+                    {errorMessage || successMessage}
+                  </SubmitStatus>
+                )}
                 <Button
                   onClick={foo}
                   fullWidth
