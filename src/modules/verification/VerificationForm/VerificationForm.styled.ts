@@ -33,4 +33,18 @@ const ButtonWrapper = styled.div`
   }
 `;
 
-export { ButtonWrapper, VerificationFormView };
+const SubmitStatus = styled.div`
+  margin-top: 0.8rem;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem 1rem 1rem 2rem;
+  gap: 0.4rem;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  background-color: ${(props) => props.theme.colors.status.success.secondary};
+  color: ${(props) => props.theme.colors.status.success.primary};
+`;
+
+export { ButtonWrapper, SubmitStatus, VerificationFormView };

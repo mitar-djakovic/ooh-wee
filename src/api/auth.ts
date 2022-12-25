@@ -39,4 +39,19 @@ const login = async (values: SignInValues) => {
   }
 };
 
-export { login, signUp };
+const sendEmailVerificationLink = async (email: string) => {
+  try {
+    const { data } = await axios.post(
+      '/auth/send-verification-link',
+      JSON.stringify({ email })
+    );
+
+    return data;
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      throw error.response?.data;
+    }
+  }
+};
+
+export { login, sendEmailVerificationLink, signUp };
