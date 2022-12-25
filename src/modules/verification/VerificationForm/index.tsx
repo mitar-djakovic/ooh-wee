@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Field, Form, Formik } from 'formik';
+import { useRouter } from 'next/router';
 import { Button, Icon, Input, Typography } from 'src/components';
 
 import { sendEmailVerificationLink } from '../../../api/auth';
@@ -16,6 +17,7 @@ interface VerificationValues {
 }
 
 const VerificationForm = () => {
+  const router = useRouter();
   const [message, setMessage] = useState('');
   const onSubmit = async (values: VerificationValues) => {
     try {
@@ -33,6 +35,10 @@ const VerificationForm = () => {
     if (touched && !error) {
       return 'success';
     }
+  };
+
+  const handleReturnToLogin = () => {
+    router.push('/login');
   };
   return (
     <VerificationFormView>
@@ -65,9 +71,7 @@ const VerificationForm = () => {
               />
               {message && <SubmitStatus>{message}</SubmitStatus>}
               <ButtonWrapper>
-                <Button onClick={() => onSubmit(values)}>
-                  Return to login
-                </Button>
+                <Button onClick={handleReturnToLogin}>Return to login</Button>
                 <Button onClick={() => onSubmit(values)}>Resend email</Button>
               </ButtonWrapper>
             </Form>
