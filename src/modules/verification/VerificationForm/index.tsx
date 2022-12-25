@@ -1,16 +1,29 @@
+import { useState } from 'react';
 import { Field, Form, Formik } from 'formik';
 import { Button, Icon, Input, Typography } from 'src/components';
 
+import { sendEmailVerificationLink } from '../../../api/auth';
+
 import { validationSchema } from './validation';
-import { ButtonWrapper, VerificationFormView } from './VerificationForm.styled';
+import {
+  ButtonWrapper,
+  SubmitStatus,
+  VerificationFormView,
+} from './VerificationForm.styled';
 
 interface VerificationValues {
   email: string;
 }
 
 const VerificationForm = () => {
-  const onSubmit = (values: VerificationValues) => {
-    console.log('submit', values);
+  const [message, setMessage] = useState('');
+  const onSubmit = async (values: VerificationValues) => {
+    try {
+      const response = await sendEmailVerificationLink(values.email);
+      setMessage(response.message);
+    } catch (error: any) {
+      setMessage(error.message);
+    }
   };
 
   const handleStatus = (touched?: boolean, error?: string): string | void => {
@@ -50,18 +63,17 @@ const VerificationForm = () => {
                 status={handleStatus(touched.email, errors.email)}
                 message={touched.email && errors.email ? errors.email : ''}
               />
+              {message && <SubmitStatus>{message}</SubmitStatus>}
+              <ButtonWrapper>
+                <Button onClick={() => onSubmit(values)}>
+                  Return to login
+                </Button>
+                <Button onClick={() => onSubmit(values)}>Resend email</Button>
+              </ButtonWrapper>
             </Form>
           );
         }}
       </Formik>
-      <ButtonWrapper>
-        <Button onClick={() => console.log('Return to login')}>
-          Return to login
-        </Button>
-        <Button onClick={() => console.log('Return to login')}>
-          Resend email
-        </Button>
-      </ButtonWrapper>
     </VerificationFormView>
   );
 };
