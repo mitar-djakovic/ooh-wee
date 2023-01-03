@@ -11,7 +11,7 @@ const DesktopNav = () => {
   };
 
   const onSignUpClick = () => {
-    router.push('/signup');
+    router.push('/signUp');
   };
 
   return (
