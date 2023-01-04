@@ -1,5 +1,5 @@
 import { AxiosError } from 'axios';
-import { axios } from 'src/config';
+import { axios, ROUTES } from 'src/config';
 
 interface SignUpValues {
   firstName: string;
@@ -16,7 +16,7 @@ interface SignInValues {
 
 const signUp = async (values: SignUpValues) => {
   try {
-    const { data } = await axios.post('/auth/signup', JSON.stringify(values));
+    const { data } = await axios.post(ROUTES.SIGN_UP, JSON.stringify(values));
 
     return data;
   } catch (error) {
@@ -27,9 +27,8 @@ const signUp = async (values: SignUpValues) => {
 };
 
 const login = async (values: SignInValues) => {
-  console.log('values', values);
   try {
-    const { data } = await axios.post('/auth/login', JSON.stringify(values));
+    const { data } = await axios.post(ROUTES.LOGIN, JSON.stringify(values));
 
     return data;
   } catch (error) {
@@ -42,7 +41,7 @@ const login = async (values: SignInValues) => {
 const sendEmailVerificationLink = async (email: string) => {
   try {
     const { data } = await axios.post(
-      '/auth/send-verification-link',
+      ROUTES.SEND_EMAIL_VERIFICATION_LINK,
       JSON.stringify({ email })
     );
 
@@ -57,7 +56,7 @@ const sendEmailVerificationLink = async (email: string) => {
 const confirmEmail = async (email: string) => {
   try {
     const { data } = await axios.post(
-      '/auth/confirm-email',
+      ROUTES.CONFIRM_EMAIL,
       JSON.stringify({ email })
     );
 
