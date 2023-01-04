@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import { Field, Form, Formik } from 'formik';
 import Image from 'next/image';
-import { signUp } from 'src/api/auth';
+import { sendEmailVerificationLink, signUp } from 'src/api/auth';
 import { logoImg } from 'src/assets/images';
 import { Button, Icon, Input } from 'src/components';
 
@@ -24,8 +24,8 @@ interface Values {
 }
 
 const SignupForm: FC = () => {
-  const [signUpError, setSignUpError] = useState('');
-  const [signUpSuccess, setSignUpSuccess] = useState('');
+  const [status, setStatus] = useState('');
+  const [error, setError] = useState(false);
 
   const foo = () => null;
 
@@ -33,17 +33,27 @@ const SignupForm: FC = () => {
     values: Values,
     setSubmitting: (status: boolean) => void
   ) => {
+    setError(false);
+    setStatus('');
     try {
       setSubmitting(true);
       const response = await signUp(values);
+
       if (response.status === 201) {
-        setSignUpError('');
-        setSignUpSuccess(response.message);
+        const emailVerificationResponse = await sendEmailVerificationLink(
+          values.email
+        );
+
+        console.log('emailVerificationResponse', emailVerificationResponse);
+        if (emailVerificationResponse.status === 201) {
+          setStatus(emailVerificationResponse.message);
+        }
       }
       setSubmitting(false);
     } catch (error: any) {
-      setSignUpSuccess('');
-      setSignUpError(error.message);
+      console.log('error', error);
+      setStatus(error.message);
+      setError(true);
       setSubmitting(false);
     }
   };
@@ -177,9 +187,14 @@ const SignupForm: FC = () => {
                 }
               />
               <ButtonContainer>
-                {(signUpError || signUpSuccess) && (
-                  <SubmitStatus status={signUpError ? 'error' : 'success'}>
-                    {signUpError || signUpSuccess}
+                {/*{(signUpError || signUpSuccess) && (*/}
+                {/*  <SubmitStatus status={signUpError ? 'error' : 'success'}>*/}
+                {/*    {signUpError || signUpSuccess}*/}
+                {/*  </SubmitStatus>*/}
+                {/*)}*/}
+                {status && (
+                  <SubmitStatus status={error ? 'error' : 'success'}>
+                    {status}
                   </SubmitStatus>
                 )}
                 <Button
