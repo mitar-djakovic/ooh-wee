@@ -54,4 +54,19 @@ const sendEmailVerificationLink = async (email: string) => {
   }
 };
 
-export { login, sendEmailVerificationLink, signUp };
+const confirmEmail = async (email: string) => {
+  try {
+    const { data } = await axios.post(
+      '/auth/confirm-email',
+      JSON.stringify({ email })
+    );
+
+    return data;
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      throw error.response?.data;
+    }
+  }
+};
+
+export { confirmEmail, login, sendEmailVerificationLink, signUp };
