@@ -51,7 +51,6 @@ const SignupForm: FC = () => {
       }
       setSubmitting(false);
     } catch (error: any) {
-      console.log('error', error);
       setStatus(error.message);
       setError(true);
       setSubmitting(false);
