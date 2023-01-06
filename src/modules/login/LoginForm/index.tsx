@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Field, Form, Formik } from 'formik';
+import jwtDecode from 'jwt-decode';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { login } from 'src/api/auth';
 import { logoImg } from 'src/assets/images';
 import { Button, Icon, Input } from 'src/components';
@@ -26,6 +28,7 @@ interface Values {
 }
 
 const LoginForm = () => {
+  const router = useRouter();
   const [loginError, setLoginError] = useState('');
   const foo = () => null;
 
@@ -37,7 +40,15 @@ const LoginForm = () => {
       setSubmitting(true);
       const response = await login(values);
       if (response.status === 200) {
-        console.log('redirect');
+        const accessToken = document.cookie
+          .split('; ')
+          .find((row) => row.startsWith('access_token'))
+          ?.split('=')[1];
+        if (accessToken) {
+          const decoded = await jwtDecode(accessToken);
+          console.log('redirect', decoded);
+        }
+        await router.push('/');
       }
       setSubmitting(false);
     } catch (error: any) {
