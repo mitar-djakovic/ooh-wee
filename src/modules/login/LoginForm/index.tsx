@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { login } from 'src/api/auth';
 import { logoImg } from 'src/assets/images';
-import { Button, Icon, Input } from 'src/components';
+import { Button, Icon, Input, RoundButton } from 'src/components';
 
 import {
   ButtonContainer,
@@ -166,6 +166,7 @@ const LoginForm = () => {
                 >
                   Sign up with Twitter
                 </SocialButton>
+                <RoundButton icon={<Icon name="envelope" />} />
               </SocialButtons>
             </Form>
           );

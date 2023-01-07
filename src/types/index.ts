@@ -1,1 +1,1 @@
-export type Status = 'primary' | 'secondary' | 'success' | 'warning' | 'danger';
+export type Status = 'primary' | 'secondary' | 'success' | 'warning' | 'error';

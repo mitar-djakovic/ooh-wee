@@ -3,18 +3,12 @@ import { ThemeProvider } from 'styled-components';
 
 import { theme } from '../../theme';
 
-import Button from './index';
+import RoundButton from './index';
 
 export default {
-  title: 'Component/Button',
-  component: Button,
+  title: 'Component/RoundButton',
+  component: RoundButton,
   argTypes: {
-    children: {
-      type: 'string',
-    },
-    fullWidth: {
-      type: 'boolean',
-    },
     disabled: {
       type: 'boolean',
     },
@@ -25,30 +19,22 @@ export default {
       type: 'boolean',
     },
   },
-} as ComponentMeta<typeof Button>;
+} as ComponentMeta<typeof RoundButton>;
 
-const Template: ComponentStory<typeof Button> = (args) => {
+const Template: ComponentStory<typeof RoundButton> = (args) => {
   return (
     <ThemeProvider theme={theme}>
-      <Button {...args} />
+      <RoundButton {...args} />
     </ThemeProvider>
   );
 };
 
 export const Primary = Template.bind({});
 
-export const PrimaryWithIcon = Template.bind({});
-
 Primary.args = {
-  children: 'Primary',
   variant: 'primary',
-  fullWidth: false,
   outlined: false,
   disabled: false,
   type: 'button',
   className: '',
-};
-
-PrimaryWithIcon.args = {
-  ...Primary.args,
 };

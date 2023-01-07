@@ -6,6 +6,7 @@ export const theme = {
       hover: '#5B8DEF',
       light: '#9DBFF9',
       focus: '#E5F0FF',
+      disabled: '',
     },
     secondary: {
       dark: '#05A660',
@@ -13,6 +14,7 @@ export const theme = {
       hover: '#39D98A',
       light: '#57EBA1',
       focus: '#E3FFF1',
+      disabled: '',
     },
     success: {
       dark: 'red',
@@ -20,6 +22,7 @@ export const theme = {
       hover: 'orange',
       light: 'green',
       focus: 'pink',
+      disabled: '',
     },
     warning: {
       dark: '#E57A00',
@@ -27,13 +30,15 @@ export const theme = {
       hover: '#FDAC42',
       light: '#FCCC75',
       focus: '#FFF8E5',
+      disabled: '',
     },
-    danger: {
+    error: {
       dark: '#E53535',
       main: '#FF3B3B',
       hover: '#FF5C5C',
       light: '#FF8080',
       focus: '#FFE5E5',
+      disabled: '',
     },
     weightColors: {
       bold: '#09101D',
