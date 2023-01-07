@@ -9,19 +9,19 @@ export const theme = {
       disabled: '',
     },
     secondary: {
-      dark: '#05A660',
-      main: '#06C270',
-      hover: '#39D98A',
-      light: '#57EBA1',
-      focus: '#E3FFF1',
-      disabled: '',
-    },
-    success: {
       dark: 'red',
       main: 'blue',
       hover: 'orange',
       light: 'green',
       focus: 'pink',
+      disabled: '',
+    },
+    success: {
+      dark: '#05A660',
+      main: '#06C270',
+      hover: '#39D98A',
+      light: '#57EBA1',
+      focus: '#E3FFF1',
       disabled: '',
     },
     warning: {

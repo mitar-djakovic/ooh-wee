@@ -1,6 +1,5 @@
-import { FC } from 'react';
-
 import {
+  BoxHelper,
   IconWrapper,
   InputContainer,
   InputStatus,
@@ -9,25 +8,25 @@ import {
 } from './Input.styled';
 
 type Status = 'success' | 'error';
+type InputType = 'text' | 'password' | 'email';
 
 interface InputProps {
   placeholder: string;
   name: string;
   label?: string;
-  outline?: boolean;
   onChange: () => void;
   onBlur: () => void;
   id: string;
   value: string;
   icon?: JSX.Element;
   fullWidth?: boolean;
-  type?: string;
+  type?: InputType;
   className?: string;
   status?: Status;
   message?: string;
 }
 
-const Input: FC<InputProps> = ({
+const Input = ({
   placeholder,
   label,
   name,
@@ -41,22 +40,25 @@ const Input: FC<InputProps> = ({
   className,
   status,
   message,
-}) => {
+}: InputProps) => {
   return (
     <InputContainer fullWidth={fullWidth}>
       {label && <Label htmlFor={name}>{label}</Label>}
-      <InputStyled
-        className={className}
-        type={type}
-        id={id}
-        onChange={onChange}
-        onBlur={onBlur}
-        name={name}
-        placeholder={placeholder}
-        value={value}
-        status={status}
-      />
-      <IconWrapper status={status}>{icon}</IconWrapper>
+      <BoxHelper>
+        <InputStyled
+          className={className}
+          type={type}
+          id={id}
+          onChange={onChange}
+          onBlur={onBlur}
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          status={status}
+          label={label}
+        />
+        <IconWrapper status={status}>{icon}</IconWrapper>
+      </BoxHelper>
       {message && <InputStatus status={status}>{message}</InputStatus>}
     </InputContainer>
   );
