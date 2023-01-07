@@ -1,7 +1,9 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Input } from 'src/components';
-import { theme } from 'src/theme';
 import { ThemeProvider } from 'styled-components';
+
+import { theme } from '../../theme';
+
+import Input from './index';
 
 export default {
   title: 'Component/Input',

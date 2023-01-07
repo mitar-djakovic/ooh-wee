@@ -147,21 +147,21 @@ const LoginForm = () => {
               <SocialButtons>
                 <SocialButton
                   onClick={foo}
-                  icon={<Icon name="google" />}
+                  leftIcon={<Icon name="google" />}
                   fullWidth
                 >
                   Sign Up with Google
                 </SocialButton>
                 <SocialButton
                   onClick={foo}
-                  icon={<Icon name="facebook" />}
+                  leftIcon={<Icon name="facebook" />}
                   fullWidth
                 >
                   Sign up with Facebook
                 </SocialButton>
                 <SocialButton
                   onClick={foo}
-                  icon={<Icon name="twitter" />}
+                  leftIcon={<Icon name="twitter" />}
                   fullWidth
                 >
                   Sign up with Twitter

@@ -16,41 +16,27 @@ import {
 
 import { IconView } from './Icon.styles';
 
-const renderIcon = (name: string) => {
-  switch (name) {
-    case 'check':
-      return <CheckCircle />;
-    case 'warning':
-      return <WarningCircle />;
-    case 'warning-full':
-      return <WarningCircleFull />;
-    case 'eye':
-      return <Eye />;
-    case 'eye-closed':
-      return <EyeClosed />;
-    case 'envelope':
-      return <Envelope />;
-    case 'lock':
-      return <Lock />;
-    case 'user':
-      return <User />;
-    case 'google':
-      return <Google />;
-    case 'twitter':
-      return <Twitter />;
-    case 'facebook':
-      return <Facebook />;
-    case 'search':
-      return <Search />;
-  }
+export const iconMap = {
+  check: <CheckCircle />,
+  warning: <WarningCircle />,
+  warningFull: <WarningCircleFull />,
+  eye: <Eye />,
+  eyeClosed: <EyeClosed />,
+  envelope: <Envelope />,
+  lock: <Lock />,
+  user: <User />,
+  google: <Google />,
+  twitter: <Twitter />,
+  facebook: <Facebook />,
+  search: <Search />,
 };
 
-type Name =
+export type Name =
   | 'warning'
-  | 'warning-full'
+  | 'warningFull'
   | 'check'
   | 'eye'
-  | 'eye-closed'
+  | 'eyeClosed'
   | 'envelope'
   | 'lock'
   | 'user'
@@ -67,7 +53,7 @@ interface IconProps {
 
 const Icon: FC<IconProps> = ({ name, size = '1.8rem', color = '#000000' }) => (
   <IconView size={size} color={color}>
-    {renderIcon(name)}
+    {iconMap[name]}
   </IconView>
 );
 

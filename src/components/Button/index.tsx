@@ -1,29 +1,34 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { ButtonStyled, IconWrapper } from './Button.styled';
 
-type Type = 'submit' | 'reset' | 'button';
+export type Action = 'submit' | 'reset' | 'button';
+import { Status } from 'src/types';
 
 interface ButtonProps {
   children?: string;
   onClick: () => void;
-  secondary?: boolean;
+  variant?: Status;
   disabled?: boolean;
-  type?: Type;
+  type?: Action;
   fullWidth?: boolean;
   className?: string;
-  icon?: JSX.Element;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
+  outlined?: boolean;
 }
 
 const Button: FC<ButtonProps> = ({
   children,
   onClick,
-  secondary = false,
   disabled = false,
   type = 'button',
   fullWidth = false,
   className,
-  icon,
+  leftIcon,
+  rightIcon,
+  variant = 'primary',
+  outlined = false,
 }: ButtonProps) => {
   return (
     <ButtonStyled
@@ -31,11 +36,13 @@ const Button: FC<ButtonProps> = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      secondary={secondary}
+      variant={variant}
       fullWidth={fullWidth}
+      outlined={outlined}
     >
-      {icon && <IconWrapper>{icon}</IconWrapper>}
+      {leftIcon && <IconWrapper>{leftIcon}</IconWrapper>}
       {children}
+      {rightIcon && <IconWrapper>{rightIcon}</IconWrapper>}
     </ButtonStyled>
   );
 };

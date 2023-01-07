@@ -1,5 +1,3 @@
-import { ReactNode } from 'react';
-
 import {
   Heading1,
   Heading2,
@@ -16,31 +14,26 @@ type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p1' | 'p2' | 'p3';
 
 interface TypographyProp {
   variant: Variant;
-  children: ReactNode;
+  children: string | string[];
   className?: string;
 }
 
+const TypographyMap = {
+  h1: Heading1,
+  h2: Heading2,
+  h3: Heading3,
+  h4: Heading4,
+  h5: Heading5,
+  h6: Heading6,
+  p1: Paragraph1,
+  p2: Paragraph2,
+  p3: Paragraph3,
+};
+
 const Typography = ({ variant, children, className }: TypographyProp) => {
-  switch (variant) {
-    case 'h1':
-      return <Heading1 className={className}>{children}</Heading1>;
-    case 'h2':
-      return <Heading2 className={className}>{children}</Heading2>;
-    case 'h3':
-      return <Heading3 className={className}>{children}</Heading3>;
-    case 'h4':
-      return <Heading4 className={className}>{children}</Heading4>;
-    case 'h5':
-      return <Heading5 className={className}>{children}</Heading5>;
-    case 'h6':
-      return <Heading6 className={className}>{children}</Heading6>;
-    case 'p1':
-      return <Paragraph1 className={className}>{children}</Paragraph1>;
-    case 'p2':
-      return <Paragraph2 className={className}>{children}</Paragraph2>;
-    default:
-      return <Paragraph3 className={className}>{children}</Paragraph3>;
-  }
+  const Type = TypographyMap[variant];
+
+  return <Type className={className}>{children}</Type>;
 };
 
 export default Typography;
