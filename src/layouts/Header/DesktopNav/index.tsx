@@ -17,9 +17,7 @@ const DesktopNav = () => {
   return (
     <DesktopNavView>
       <Button onClick={onSignInClick}>Sign Up</Button>
-      <Button secondary onClick={onSignUpClick}>
-        Sign In
-      </Button>
+      <Button onClick={onSignUpClick}>Sign In</Button>
     </DesktopNavView>
   );
 };

@@ -21,11 +21,10 @@ const Promo = () => (
     <Container>
       <Content>
         <Title variant="h1">
-          Discover, collect, and sell <br /> extraordinary Comics
+          Discover, collect, and sell extraordinary Comics
         </Title>
         <SubTitle variant="p1">
           Our marketplace is the world&lsquo;s first and largest Comic market
-          <br />
           for independent creators worldwide
         </SubTitle>
         <PromoSearchForm />

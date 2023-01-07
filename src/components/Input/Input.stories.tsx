@@ -1,7 +1,9 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Input } from 'src/components';
-import { theme } from 'src/theme';
 import { ThemeProvider } from 'styled-components';
+
+import { theme } from '../../theme';
+
+import Input from './index';
 
 export default {
   title: 'Component/Input',
@@ -10,8 +12,26 @@ export default {
     placeholder: {
       type: 'string',
     },
-    outline: {
+    label: {
+      type: 'string',
+    },
+    status: {
+      type: 'string',
+    },
+    message: {
+      type: 'string',
+    },
+    className: {
+      type: 'string',
+    },
+    fullWidth: {
       type: 'boolean',
+    },
+    id: {
+      type: 'string',
+    },
+    name: {
+      type: 'string',
     },
   },
 } as ComponentMeta<typeof Input>;
@@ -27,6 +47,11 @@ const Template: ComponentStory<typeof Input> = (args) => {
 export const Primary = Template.bind({});
 
 Primary.args = {
-  placeholder: 'Input placeholder',
-  outline: true,
+  placeholder: 'Placeholder',
+  label: 'Label',
+  fullWidth: false,
+  id: 'id',
+  name: 'name',
+  type: 'text',
+  className: '',
 };

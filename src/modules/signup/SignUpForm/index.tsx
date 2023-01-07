@@ -153,7 +153,7 @@ const SignupForm: FC = () => {
                 type="password"
                 name="password"
                 id="password"
-                icon={<Icon name="eye-closed" />}
+                icon={<Icon name="eyeClosed" />}
                 fullWidth
                 placeholder="Enter your password"
                 label="Password"

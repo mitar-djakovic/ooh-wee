@@ -25,7 +25,7 @@ const PromoSearchForm = () => (
               />
               <Button
                 disabled={isSubmitting}
-                icon={<Icon name="search" />}
+                leftIcon={<Icon name="search" />}
                 type="submit"
                 onClick={handleSubmit}
               />
