@@ -17,7 +17,8 @@ const BackgroundImage = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  span {
+  img {
+    width: 100%;
     height: 100% !important;
   }
 `;
