@@ -1,5 +1,6 @@
-import { defaultBreakpoints, device } from 'src/styles/breakpoints';
 import styled from 'styled-components';
+
+import { defaultBreakpoints, device } from '../../styles/breakpoints';
 
 const ContainerStyled = styled.div<{ display: string }>`
   display: ${(props) => props.display};
