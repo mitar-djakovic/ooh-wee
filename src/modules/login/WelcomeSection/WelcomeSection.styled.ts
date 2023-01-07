@@ -16,8 +16,10 @@ const BackgroundImage = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  span {
+  background-color: red;
+  img {
     height: 100% !important;
+    width: 100%;
   }
 `;
 
