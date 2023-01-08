@@ -12,6 +12,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@storybook/addon-docs": "^6.5.15",
     "axios": "^1.2.2",
     "formik": "^2.2.9",
     "jwt-decode": "^3.1.2",

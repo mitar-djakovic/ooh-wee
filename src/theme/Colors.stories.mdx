@@ -1,0 +1,67 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+import { colors } from './colors';
+
+<Meta title="Colors" />
+
+<ColorPalette>
+  <ColorItem
+    title="theme.colors.primary"
+    subtitle="Primary colors"
+    colors={{
+      Dark: colors.primaryDark,
+      Main: colors.primaryMain,
+      Hover: colors.primaryHover,
+      Light: colors.primaryLight,
+      Focus: colors.primaryFocus,
+      Disabled: colors.primaryDisabled
+    }}
+  />
+  <ColorItem
+    title="theme.colors.secondary"
+    subtitle="Secondary colors"
+    colors={{
+      Dark: colors.secondaryDark,
+      Main: colors.secondaryMain,
+      Hover: colors.secondaryHover,
+      Light: colors.secondaryLight,
+      Focus: colors.secondaryFocus,
+      Disabled: colors.secondaryDisabled
+    }}
+  />
+  <ColorItem
+    title="theme.colors.success"
+    subtitle="Success colors"
+    colors={{
+      Dark: colors.successDark,
+      Main: colors.successMain,
+      Hover: colors.successHover,
+      Light: colors.successLight,
+      Focus: colors.successFocus,
+      Disabled: colors.successDisabled
+    }}
+  />
+  <ColorItem
+    title="theme.colors.warning"
+    subtitle="Warning colors"
+    colors={{
+      Dark: colors.warningDark,
+      Main: colors.warningMain,
+      Hover: colors.warningHover,
+      Light: colors.warningLight,
+      Focus: colors.warningFocus,
+      Disabled: colors.warningDisabled
+    }}
+  />
+  <ColorItem
+    title="theme.colors.error"
+    subtitle="Error colors"
+    colors={{
+      Dark: colors.errorDark,
+      Main: colors.errorMain,
+      Hover: colors.errorHover,
+      Light: colors.errorLight,
+      Focus: colors.errorFocus,
+      Disabled: colors.errorDisabled
+    }}
+  />
+</ColorPalette>
