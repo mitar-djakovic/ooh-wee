@@ -1,9 +1,10 @@
 import { FC, useState } from 'react';
-import { Field, Form, Formik } from 'formik';
+import { Field, Form, Formik, FormikProps } from 'formik';
 import Image from 'next/image';
 import { sendEmailVerificationLink, signUp } from 'src/api/auth';
 import { logoImg } from 'src/assets/images';
 import { Button, Icon, Input } from 'src/components';
+import { handleStatus } from 'src/utils';
 
 import {
   ButtonContainer,
@@ -22,6 +23,29 @@ interface Values {
   password: string;
   confirmPassword: string;
 }
+
+const generateGetCommonProps =
+  ({
+    handleChange,
+    handleBlur,
+    values,
+    touched,
+    errors,
+  }: FormikProps<Values>) =>
+  (name: keyof Values) => {
+    return {
+      onChange: handleChange,
+      onBlur: handleBlur,
+      component: Input,
+      name: name,
+      id: name,
+      fullWidth: true,
+      value: values[name],
+      type: 'text',
+      status: handleStatus(touched[name], errors[name]),
+      message: touched[name] && errors[name] ? errors[name] : '',
+    };
+  };
 
 const SignupForm: FC = () => {
   const [status, setStatus] = useState('');
@@ -44,7 +68,6 @@ const SignupForm: FC = () => {
           values.email
         );
 
-        console.log('emailVerificationResponse', emailVerificationResponse);
         if (emailVerificationResponse.status === 201) {
           setStatus(emailVerificationResponse.message);
         }
@@ -54,15 +77,6 @@ const SignupForm: FC = () => {
       setStatus(error.message);
       setError(true);
       setSubmitting(false);
-    }
-  };
-
-  const handleStatus = (touched?: boolean, error?: string): string | void => {
-    if (touched && error) {
-      return 'error';
-    }
-    if (touched && !error) {
-      return 'success';
     }
   };
 
@@ -88,109 +102,45 @@ const SignupForm: FC = () => {
         }}
         validationSchema={validationSchema}
       >
-        {({
-          values,
-          isSubmitting,
-          handleBlur,
-          handleChange,
-          errors,
-          touched,
-        }) => {
+        {(form) => {
+          const getCommonProps = generateGetCommonProps(form);
+
           return (
             <Form>
               <Field
-                onChange={handleChange}
-                onBlur={handleBlur}
-                component={Input}
-                name="firstName"
-                id="firstName"
+                {...getCommonProps('firstName')}
                 icon={<Icon name="user" />}
-                fullWidth
                 placeholder="Enter your first name"
                 label="First Name"
-                value={values.firstName}
-                status={handleStatus(touched.firstName, errors.firstName)}
-                message={
-                  touched.firstName && errors.firstName ? errors.firstName : ''
-                }
               />
               <Field
-                onChange={handleChange}
-                onBlur={handleBlur}
-                component={Input}
-                type="text"
-                name="lastName"
-                id="lastName"
-                fullWidth
+                {...getCommonProps('lastName')}
                 placeholder="Enter your last name"
                 icon={<Icon name="envelope" />}
                 label="Last Name"
-                value={values.lastName}
-                status={handleStatus(touched.lastName, errors.lastName)}
-                message={
-                  touched.lastName && errors.lastName ? errors.lastName : ''
-                }
               />
               <Field
-                onChange={handleChange}
-                onBlur={handleBlur}
-                component={Input}
+                {...getCommonProps('email')}
                 type="email"
-                name="email"
-                id="email"
-                fullWidth
                 placeholder="Enter your email"
                 label="Email"
                 icon={<Icon name="envelope" />}
-                value={values.email}
-                status={handleStatus(touched.email, errors.email)}
-                message={touched.email && errors.email ? errors.email : ''}
               />
               <Field
-                onChange={handleChange}
-                onBlur={handleBlur}
-                component={Input}
+                {...getCommonProps('password')}
                 type="password"
-                name="password"
-                id="password"
                 icon={<Icon name="eyeClosed" />}
-                fullWidth
                 placeholder="Enter your password"
                 label="Password"
-                value={values.password}
-                status={handleStatus(touched.password, errors.password)}
-                message={
-                  touched.password && errors.password ? errors.password : ''
-                }
               />
               <Field
-                onChange={handleChange}
-                onBlur={handleBlur}
-                component={Input}
+                {...getCommonProps('confirmPassword')}
                 type="password"
-                name="confirmPassword"
-                id="confirmPassword"
-                fullWidth
                 placeholder="Confirm your password"
                 label="Confirm Password"
-                value={values.confirmPassword}
                 icon={<Icon name="lock" />}
-                status={handleStatus(
-                  touched.confirmPassword,
-                  errors.confirmPassword
-                )}
-                message={
-                  touched.confirmPassword && errors.confirmPassword
-                    ? errors.confirmPassword
-                    : ''
-                }
               />
               <ButtonContainer>
-                {/*{(signUpError || signUpSuccess) && (*/}
-                {/*  <SubmitStatus status={signUpError ? 'error' : 'success'}>*/}
-                {/*    {signUpError || signUpSuccess}*/}
-                {/*  </SubmitStatus>*/}
-                {/*)}*/}
                 {status && (
                   <SubmitStatus status={error ? 'error' : 'success'}>
                     {status}
@@ -200,7 +150,7 @@ const SignupForm: FC = () => {
                   onClick={foo}
                   fullWidth
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={form.isSubmitting}
                 >
                   Signup
                 </Button>
