@@ -1,5 +1,15 @@
-import VerificationToken from 'src/modules/verificationToken';
+import { ThemeProvider } from 'styled-components';
 
-const TokenPage = () => <VerificationToken />;
+import { theme } from '../../../theme';
+
+import VerificationToken from './verificationToken';
+
+import 'src/styles/reset.css';
+
+const TokenPage = () => (
+  <ThemeProvider theme={theme}>
+    <VerificationToken />
+  </ThemeProvider>
+);
 
 export default TokenPage;
