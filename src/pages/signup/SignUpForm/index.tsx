@@ -8,6 +8,7 @@ import { handleStatus } from 'src/utils';
 
 import {
   ButtonContainer,
+  FieldWrapper,
   LogoContainer,
   SignInFormView,
   SubmitStatus,
@@ -17,8 +18,6 @@ import {
 import { validationSchema } from './validation';
 
 interface Values {
-  firstName: string;
-  lastName: string;
   email: string;
   password: string;
   confirmPassword: string;
@@ -94,8 +93,6 @@ const SignupForm: FC = () => {
           onSubmit(values, setSubmitting)
         }
         initialValues={{
-          firstName: '',
-          lastName: '',
           email: '',
           password: '',
           confirmPassword: '',
@@ -107,39 +104,33 @@ const SignupForm: FC = () => {
 
           return (
             <Form>
-              <Field
-                {...getCommonProps('firstName')}
-                icon={<Icon name="user" />}
-                placeholder="Enter your first name"
-                label="First Name"
-              />
-              <Field
-                {...getCommonProps('lastName')}
-                placeholder="Enter your last name"
-                icon={<Icon name="envelope" />}
-                label="Last Name"
-              />
-              <Field
-                {...getCommonProps('email')}
-                type="email"
-                placeholder="Enter your email"
-                label="Email"
-                icon={<Icon name="envelope" />}
-              />
-              <Field
-                {...getCommonProps('password')}
-                type="password"
-                icon={<Icon name="eyeClosed" />}
-                placeholder="Enter your password"
-                label="Password"
-              />
-              <Field
-                {...getCommonProps('confirmPassword')}
-                type="password"
-                placeholder="Confirm your password"
-                label="Confirm Password"
-                icon={<Icon name="lock" />}
-              />
+              <FieldWrapper>
+                <Field
+                  {...getCommonProps('email')}
+                  type="email"
+                  placeholder="Enter your email"
+                  label="Email"
+                  icon={<Icon name="envelope" />}
+                />
+              </FieldWrapper>
+              <FieldWrapper>
+                <Field
+                  {...getCommonProps('password')}
+                  type="password"
+                  icon={<Icon name="eyeClosed" />}
+                  placeholder="Enter your password"
+                  label="Password"
+                />
+              </FieldWrapper>
+              <FieldWrapper>
+                <Field
+                  {...getCommonProps('confirmPassword')}
+                  type="password"
+                  placeholder="Confirm your password"
+                  label="Confirm Password"
+                  icon={<Icon name="lock" />}
+                />
+              </FieldWrapper>
               <ButtonContainer>
                 {status && (
                   <SubmitStatus status={error ? 'error' : 'success'}>

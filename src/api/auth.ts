@@ -2,8 +2,6 @@ import { AxiosError } from 'axios';
 import { axios, ROUTES } from 'src/config';
 
 interface SignUpValues {
-  firstName: string;
-  lastName: string;
   email: string;
   password: string;
   confirmPassword: string;
