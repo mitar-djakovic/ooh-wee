@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { Button, Icon, Input, Typography } from 'src/components';
 
 import { sendEmailVerificationLink } from '../../../api/auth';
+import { handleStatus } from '../../../utils';
 
 import { validationSchema } from './validation';
 import {
@@ -25,15 +26,6 @@ const VerificationForm = () => {
       setMessage(response.message);
     } catch (error: any) {
       setMessage(error.message);
-    }
-  };
-
-  const handleStatus = (touched?: boolean, error?: string): string | void => {
-    if (touched && error) {
-      return 'error';
-    }
-    if (touched && !error) {
-      return 'success';
     }
   };
 

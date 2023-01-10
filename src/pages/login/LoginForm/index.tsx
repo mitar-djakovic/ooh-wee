@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Field, Form, Formik } from 'formik';
+import { Field, Form, Formik, FormikProps } from 'formik';
 import jwtDecode from 'jwt-decode';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { login } from 'src/api/auth';
 import { logoImg } from 'src/assets/images';
 import { Button, Icon, Input } from 'src/components';
+import { handleStatus } from 'src/utils';
 
 import {
   ButtonContainer,
@@ -26,6 +27,29 @@ interface Values {
   email: string;
   password: string;
 }
+
+const generateGetCommonProps =
+  ({
+    handleChange,
+    handleBlur,
+    values,
+    touched,
+    errors,
+  }: FormikProps<Values>) =>
+  (name: keyof Values) => {
+    return {
+      onChange: handleChange,
+      onBlur: handleBlur,
+      component: Input,
+      name: name,
+      id: name,
+      fullWidth: true,
+      value: values[name],
+      type: 'text',
+      status: handleStatus(touched[name], errors[name]),
+      message: touched[name] && errors[name] ? errors[name] : '',
+    };
+  };
 
 const LoginForm = () => {
   const router = useRouter();
@@ -57,15 +81,6 @@ const LoginForm = () => {
     }
   };
 
-  const handleStatus = (touched?: boolean, error?: string): string | void => {
-    if (touched && error) {
-      return 'error';
-    }
-    if (touched && !error) {
-      return 'success';
-    }
-  };
-
   return (
     <LoginFormView>
       <LogoContainer>
@@ -82,49 +97,23 @@ const LoginForm = () => {
         initialValues={{ email: '', password: '' }}
         validationSchema={validationSchema}
       >
-        {({
-          values,
-          isSubmitting,
-          handleBlur,
-          handleChange,
-          errors,
-          touched,
-        }) => {
+        {(form) => {
+          const getCommonProps = generateGetCommonProps(form);
           return (
             <Form>
               <Field
-                onChange={handleChange}
-                onBlur={handleBlur}
-                component={Input}
+                {...getCommonProps('email')}
                 type="email"
-                name="email"
-                id="email"
-                showStatus
                 icon={<Icon name="envelope" />}
-                fullWidth
                 placeholder="Enter your email"
                 label="Email"
-                value={values.email}
-                status={handleStatus(touched.email, errors.email)}
-                message={touched.email && errors.email ? errors.email : ''}
               />
               <Field
-                onChange={handleChange}
-                onBlur={handleBlur}
-                component={Input}
+                {...getCommonProps('password')}
                 type="password"
-                name="password"
-                id="password"
-                showStatus
-                fullWidth
                 placeholder="Enter your password"
                 label="Password"
-                value={values.password}
                 icon={<Icon name="lock" />}
-                status={handleStatus(touched.password, errors.password)}
-                message={
-                  touched.password && errors.password ? errors.password : ''
-                }
               />
               <ButtonContainer>
                 {loginError && (
@@ -134,7 +123,7 @@ const LoginForm = () => {
                   onClick={foo}
                   fullWidth
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={form.isSubmitting}
                 >
                   Login
                 </Button>
