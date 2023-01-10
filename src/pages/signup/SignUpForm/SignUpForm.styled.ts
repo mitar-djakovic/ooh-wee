@@ -58,8 +58,13 @@ const SubmitStatus = styled.div<{ status?: Status }>`
       : props.theme.colors.status.success.primary};
 `;
 
+const FieldWrapper = styled.div`
+  margin-bottom: 1rem;
+`;
+
 export {
   ButtonContainer,
+  FieldWrapper,
   LogoContainer,
   SignInFormView,
   SubmitStatus,
