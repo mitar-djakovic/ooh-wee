@@ -15,7 +15,6 @@ interface SignInValues {
 const signUp = async (values: SignUpValues) => {
   try {
     const { data } = await axios.post(ROUTES.SIGN_UP, JSON.stringify(values));
-
     return data;
   } catch (error) {
     if (error instanceof AxiosError) {

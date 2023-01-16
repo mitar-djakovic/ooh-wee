@@ -54,6 +54,7 @@ const generateGetCommonProps =
 const LoginForm = () => {
   const router = useRouter();
   const [loginError, setLoginError] = useState('');
+
   const foo = () => null;
 
   const onSubmit = async (
