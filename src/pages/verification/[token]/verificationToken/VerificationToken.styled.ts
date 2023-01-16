@@ -8,11 +8,11 @@ const VerificationTokenView = styled.div`
 `;
 
 const ErrorMessage = styled(Typography)`
-  color: ${(props) => props.theme.colors.status.error.primary};
+  color: ${(props) => props.theme.colors.error.primary};
 `;
 
 const SuccessMessage = styled(Typography)`
-  color: ${(props) => props.theme.colors.status.success.primary};
+  color: ${(props) => props.theme.colors.success.primary};
 `;
 
 export { ErrorMessage, SuccessMessage, VerificationTokenView };

@@ -43,8 +43,8 @@ const SubmitStatus = styled.div`
   gap: 0.4rem;
   font-size: 1.6rem;
   margin-bottom: 2rem;
-  background-color: ${(props) => props.theme.colors.status.success.secondary};
-  color: ${(props) => props.theme.colors.status.success.primary};
+  background-color: ${(props) => props.theme.colors.success.hover};
+  color: ${(props) => props.theme.colors.success.main};
 `;
 
 export { ButtonWrapper, SubmitStatus, VerificationFormView };

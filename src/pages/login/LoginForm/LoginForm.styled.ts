@@ -69,17 +69,18 @@ const SubmitStatus = styled.div<{ status?: Status }>`
   margin-bottom: 2rem;
   background-color: ${(props) => {
     if (props.status === 'error') {
-      return props.theme.colors.status.error.secondary;
+      console.log('status', props.status);
+      return props.theme.colors.error.light;
     }
 
     if (props.status === 'success') {
-      return props.theme.colors.status.success.secondary;
+      return props.theme.colors.success.secondary;
     }
   }};
   color: ${(props) =>
     props.status === 'error'
-      ? props.theme.colors.status.error.primary
-      : props.theme.colors.status.success.primary};
+      ? props.theme.colors.error.main
+      : props.theme.colors.success.primary};
 `;
 
 export {

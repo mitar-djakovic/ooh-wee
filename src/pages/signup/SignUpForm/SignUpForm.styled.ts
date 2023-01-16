@@ -43,19 +43,10 @@ const SubmitStatus = styled.div<{ status?: Status }>`
   gap: 0.4rem;
   font-size: 1.6rem;
   margin-bottom: 2rem;
-  background-color: ${(props) => {
-    if (props.status === 'error') {
-      return props.theme.colors.status.error.secondary;
-    }
-
-    if (props.status === 'success') {
-      return props.theme.colors.status.success.secondary;
-    }
-  }};
+  background-color: ${(props) =>
+    props.status !== undefined ? props.theme.colors[props.status].light : ''};
   color: ${(props) =>
-    props.status === 'error'
-      ? props.theme.colors.status.error.primary
-      : props.theme.colors.status.success.primary};
+    props.status !== undefined ? props.theme.colors[props.status].main : ''};
 `;
 
 const FieldWrapper = styled.div`

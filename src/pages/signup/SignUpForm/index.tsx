@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import { Field, Form, Formik, FormikProps } from 'formik';
 import Image from 'next/image';
-import { sendEmailVerificationLink, signUp } from 'src/api/auth';
+import { signUp } from 'src/api/auth';
 import { logoImg } from 'src/assets/images';
 import { Button, Icon, Input } from 'src/components';
 import { handleStatus } from 'src/utils';
@@ -62,15 +62,8 @@ const SignupForm: FC = () => {
       setSubmitting(true);
       const response = await signUp(values);
 
-      if (response.status === 201) {
-        const emailVerificationResponse = await sendEmailVerificationLink(
-          values.email
-        );
-
-        if (emailVerificationResponse.status === 201) {
-          setStatus(emailVerificationResponse.message);
-        }
-      }
+      setStatus(response.message);
+      console.log('response', response);
       setSubmitting(false);
     } catch (error: any) {
       setStatus(error.message);
